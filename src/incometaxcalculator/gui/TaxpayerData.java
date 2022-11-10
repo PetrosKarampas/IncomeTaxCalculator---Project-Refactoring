@@ -64,10 +64,8 @@ public class TaxpayerData extends JFrame {
     contentPane.add(receiptsListScrollPane);
 
     HashMap<Integer, Receipt> receipts = taxpayerManager.getReceiptHashMap(taxRegistrationNumber);
-    Iterator<HashMap.Entry<Integer, Receipt>> iterator = receipts.entrySet().iterator();
 
-    while (iterator.hasNext()) {
-      HashMap.Entry<Integer, Receipt> entry = iterator.next();
+    for (HashMap.Entry<Integer, Receipt> entry : receipts.entrySet()) {
       Receipt receipt = entry.getValue();
       receiptsModel.addElement(receipt.getId());
     }

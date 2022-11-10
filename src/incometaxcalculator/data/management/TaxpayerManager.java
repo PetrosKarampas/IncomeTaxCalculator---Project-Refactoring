@@ -58,9 +58,7 @@ public class TaxpayerManager {
     Taxpayer taxpayer = taxpayerHashMap.get(taxRegistrationNumber);
     taxpayerHashMap.remove(taxRegistrationNumber);
     HashMap<Integer, Receipt> receiptsHashMap = taxpayer.getReceiptHashMap();
-    Iterator<HashMap.Entry<Integer, Receipt>> iterator = receiptsHashMap.entrySet().iterator();
-    while (iterator.hasNext()) {
-      HashMap.Entry<Integer, Receipt> entry = iterator.next();
+    for (HashMap.Entry<Integer, Receipt> entry : receiptsHashMap.entrySet()) {
       Receipt receipt = entry.getValue();
       receiptOwnerTRN.remove(receipt.getId());
     }

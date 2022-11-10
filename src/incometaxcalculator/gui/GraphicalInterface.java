@@ -165,7 +165,6 @@ public class GraphicalInterface extends JFrame {
                   "Please make sure your date is " + "DD/MM/YYYY and try again.");
             }
           }
-
         }
       }
     });
