@@ -14,11 +14,6 @@ public class Company {
     return name;
   }
 
-  // poy xreiazomaste thn getAddress? jo
-  public String getAddress() {
-    return address.toString();
-  }
-
   public String getCountry() {
     return address.getCountry();
   }

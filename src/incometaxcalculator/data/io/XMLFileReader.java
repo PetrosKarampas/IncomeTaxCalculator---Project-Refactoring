@@ -1,37 +1,25 @@
 package incometaxcalculator.data.io;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-
 import incometaxcalculator.exceptions.WrongFileFormatException;
+import org.jetbrains.annotations.NotNull;
+import java.util.Arrays;
 
-public class XMLFileReader extends FileReader {
+public class XMLFileReader extends FileReaderClass {
+  protected int getReceiptID(@NotNull String @NotNull [] values){
+    if(values[0].equals("<ReceiptID>"))
+      return Integer.parseInt(values[1].trim());
 
-  protected int checkForReceipt(BufferedReader inputStream)
-      throws NumberFormatException, IOException {
-    String line;
-    while (!isEmpty(line = inputStream.readLine())) {
-      String values[] = line.split(" ", 3);
-      if (values[0].equals("<ReceiptID>")) {
-        int receiptId = Integer.parseInt(values[1].trim());
-        return receiptId;
-      }
-    }
     return -1;
   }
-
-  protected String getValueOfField(String fieldsLine) throws WrongFileFormatException {
-    if (isEmpty(fieldsLine)) {
-      throw new WrongFileFormatException();
-    }
+  protected String getLastValueFromLine(String fieldsLine) throws WrongFileFormatException
+  {
     try {
-      String valueWithTail[] = fieldsLine.split(" ", 2);
-      String valueReversed[] = new StringBuilder(valueWithTail[1]).reverse().toString().trim()
-          .split(" ", 2);
+      String[] valueWithTail = fieldsLine.split(" ", 2);
+      String[] valueReversed = new StringBuilder(valueWithTail[1]).reverse().toString().trim().split(" ", 2);
       return new StringBuilder(valueReversed[1]).reverse().toString();
     } catch (NullPointerException e) {
+      System.out.println(Arrays.toString(e.getStackTrace()));
       throw new WrongFileFormatException();
     }
   }
-
 }
