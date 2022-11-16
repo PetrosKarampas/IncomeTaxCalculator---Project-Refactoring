@@ -16,9 +16,9 @@ public abstract class FileWriter {
     return manager.getTaxpayer(taxRegistrationNumber);
   }
 
-  public String getTaxpayerName(int taxRegistrationNumber) {
+  public String getTaxpayerFullName(int taxRegistrationNumber) {
     TaxpayerManager manager = new TaxpayerManager();
-    return manager.getTaxpayerName(taxRegistrationNumber);
+    return manager.getTaxpayerFullName(taxRegistrationNumber);
   }
 
   public String getTaxpayerIncome(int taxRegistrationNumber) {
@@ -38,12 +38,12 @@ public abstract class FileWriter {
 
   public int getTaxpayerTotalReceiptsGathered(int taxRegistrationNumber) {
     TaxpayerManager manager = new TaxpayerManager();
-    return manager.getTaxpayerTotalReceiptsGathered(taxRegistrationNumber);
+    return manager.getTaxpayerTotalReceipts(taxRegistrationNumber);
   }
 
   public float getTaxpayerAmountOfReceiptKind(int taxRegistrationNumber, short kind) {
     TaxpayerManager manager = new TaxpayerManager();
-    return manager.getTaxpayerAmountOfReceiptKind(taxRegistrationNumber, kind);
+    return manager.getTaxpayerReceiptAmountPerKind(taxRegistrationNumber, kind);
   }
 
   public double getTaxpayerTotalTax(int taxRegistrationNumber) {
@@ -62,7 +62,7 @@ public abstract class FileWriter {
   }
 
   public int getReceiptId(Receipt receipt) {
-    return receipt.getId();
+    return receipt.getReceiptId();
   }
 
   public String getReceiptIssueDate(Receipt receipt) {
