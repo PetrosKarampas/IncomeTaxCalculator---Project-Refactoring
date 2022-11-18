@@ -9,7 +9,7 @@ Receipt ID: 0
 Date: 10/5/1996
 Kind: Basic
 Amount: 251.0
-Company: Parta
+Company: Drama
 Country: Jakusa
 City: Drama
 Street: Fukosima
@@ -19,7 +19,7 @@ Receipt ID: 2
 Date: 11/11/2111
 Kind: Other
 Amount: 1000.0
-Company: ewre
+Company: ewr
 Country: werw
 City: ewr
 Street: were
@@ -29,7 +29,7 @@ Receipt ID: 3
 Date: 2/2/2019
 Kind: Travel
 Amount: 100.0
-Company: sfsdf
+Company: sdfsd
 Country: sdfssdf
 City: sdfsd
 Street: sdfs
@@ -44,14 +44,4 @@ Country: wer
 City: wer
 Street: wer
 Number: 4
-
-Receipt ID: 12
-Date: 8/11/2022
-Kind: Entertainment
-Amount: 1999.0
-Company: TEST
-Country: Greece
-City: Ioannina
-Street: Smyrnhs
-Number: 15
 

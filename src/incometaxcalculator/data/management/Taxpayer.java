@@ -23,7 +23,7 @@ public abstract class Taxpayer {
   }
 
   public void addReceipt(Receipt receipt) {
-    initializereceiptKindAndIndexIntoArrayHashMap();
+    initializeReceiptKindAndIndexIntoArrayHashMap();
     for(String receiptKind: receiptKindAndIndexIntoArrayHashMap.keySet()) {
       if(receipt.getKind().equals(receiptKind)) {
         int indexIntoArray = receiptKindAndIndexIntoArrayHashMap.get(receiptKind);
@@ -68,7 +68,7 @@ public abstract class Taxpayer {
      */
   }
 
-  public void initializereceiptKindAndIndexIntoArrayHashMap() {
+  public void initializeReceiptKindAndIndexIntoArrayHashMap() {
     receiptKindAndIndexIntoArrayHashMap.put("Entertainment", 0);
     receiptKindAndIndexIntoArrayHashMap.put("Basic", 1);
     receiptKindAndIndexIntoArrayHashMap.put("Travel", 2);
