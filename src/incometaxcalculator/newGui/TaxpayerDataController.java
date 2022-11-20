@@ -1,5 +1,7 @@
 package incometaxcalculator.newGui;
 
+import incometaxcalculator.data.management.Company;
+import incometaxcalculator.data.management.Receipt;
 import incometaxcalculator.data.management.TaxpayerManager;
 import javafx.beans.property.*;
 import javafx.event.ActionEvent;
