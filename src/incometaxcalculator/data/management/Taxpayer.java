@@ -22,6 +22,8 @@ public abstract class Taxpayer {
     this.income = income;
   }
 
+
+
   public void addReceipt(Receipt receipt) {
     initializeReceiptKindAndIndexIntoArrayHashMap();
     for(String receiptKind: receiptKindAndIndexIntoArrayHashMap.keySet()) {
@@ -132,4 +134,6 @@ public abstract class Taxpayer {
   public double getBasicTax() {
     return calculateBasicTax();
   }
+
+  public void setIncome(float income) { this.income = income; }
 }

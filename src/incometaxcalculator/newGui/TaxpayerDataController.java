@@ -1,5 +1,6 @@
 package incometaxcalculator.newGui;
 
+import incometaxcalculator.data.management.TaxpayerManager;
 import javafx.beans.property.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,21 +21,19 @@ import java.util.ResourceBundle;
 
 public class TaxpayerDataController implements Initializable{
 
-    @FXML
-    private Button goBack;
-    @FXML
-    private TextField fullName;
-    private String fullNameText;
-    @FXML
-    private TextField income;
-    private String incomeText;
-    @FXML
-    private ListView<Integer> receiptList;
-    @FXML
-    private TextField status;
+    @FXML private Button goBack;
+    @FXML private Button updateBtn;
+    @FXML private TextField fullName;
+    @FXML private TextField income;
+
+    @FXML private ListView<Integer> receiptList;
+    @FXML private TextField status;
+    @FXML private TextField taxRegistrationNumber;
+
+    private TaxpayerManager manager = new TaxpayerManager();
     private String statusText;
-    @FXML
-    private TextField taxRegistrationNumber;
+    private String incomeText;
+    private String fullNameText;
     private int trnText;
 
     public TaxpayerDataController(String fullName, String income, String status, int trn) {
@@ -57,6 +56,11 @@ public class TaxpayerDataController implements Initializable{
     @FXML
     void viewChartReport(ActionEvent event) {
 
+    }
+    @FXML
+    public void updateTaxpayerData() {
+        System.out.println(this.fullName.getText() + " \n" + this.income.getText());
+        manager.getTaxpayer(trnText).setIncome(Float.parseFloat(this.income.getText()));
     }
 
     @FXML

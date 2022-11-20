@@ -182,6 +182,8 @@ public class TaxpayerManager {
     return taxpayerHashMap.get(taxRegistrationNumber).getReceiptHashMap();
   }
 
+
+
   public static HashMap<Integer, Taxpayer> getTaxpayerHashMap() {
     return taxpayerHashMap;
   }

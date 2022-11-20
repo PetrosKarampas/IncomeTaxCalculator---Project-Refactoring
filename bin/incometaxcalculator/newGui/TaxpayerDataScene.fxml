@@ -17,14 +17,14 @@
             <Text layoutX="40.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRN:" />
             <Text layoutX="29.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
             <Text layoutX="26.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Income:" />
-            <Button layoutX="16.0" layoutY="57.0" mnemonicParsing="false" onAction="#addReceipt" text="Add Receipt" />
-            <Button layoutX="110.0" layoutY="57.0" mnemonicParsing="false" onAction="#removeReceipt" text="Remove Receipt" />
-            <TextField fx:id="fullName" layoutX="72.0" layoutY="105.0" prefHeight="26.0" prefWidth="138.0" />
-            <TextField fx:id="taxRegistrationNumber" layoutX="72.0" layoutY="137.0" prefHeight="26.0" prefWidth="138.0" />
+            <Button layoutX="12.0" layoutY="40.0" mnemonicParsing="false" onAction="#addReceipt" text="Add Receipt" />
+            <Button layoutX="110.0" layoutY="40.0" mnemonicParsing="false" onAction="#removeReceipt" text="Remove Receipt" />
+            <TextField fx:id="fullName" editable="false" layoutX="72.0" layoutY="105.0" prefHeight="26.0" prefWidth="138.0" />
+            <TextField fx:id="taxRegistrationNumber" editable="false" layoutX="72.0" layoutY="137.0" prefHeight="26.0" prefWidth="138.0" />
             <TextField fx:id="status" layoutX="72.0" layoutY="165.0" prefHeight="26.0" prefWidth="138.0" />
             <TextField fx:id="income" layoutX="72.0" layoutY="194.0" prefHeight="26.0" prefWidth="138.0" />
-            <Button layoutX="83.0" layoutY="227.0" mnemonicParsing="false" onAction="#viewChartReport" text="View Chart Report" />
-            <Button fx:id="goBack" layoutX="16.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToMainScene" prefHeight="26.0" prefWidth="84.0" text="Back" />
+            <Button layoutX="9.0" layoutY="226.0" mnemonicParsing="false" onAction="#viewChartReport" text="View Chart Report" />
+            <Button fx:id="updateButton" layoutX="130.0" layoutY="226.0" mnemonicParsing="false" onAction="#updateTaxpayerData" text="Update data" />
          </children>
       </Pane>
       <SplitPane dividerPositions="0.12103174603174603" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">

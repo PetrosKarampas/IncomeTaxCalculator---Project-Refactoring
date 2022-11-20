@@ -58,7 +58,7 @@
                       <AnchorPane>
                            <children>
                               <Button fx:id="selectBtn" layoutX="54.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#selectTaxpayer" text="Select" />
-                              <Button layoutX="54.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#deleteTaxpayer" text="Delete" />
+                              <Button fx:id="deleteBtn" layoutX="54.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#deleteTaxpayer" text="Delete" />
                            </children>
                         </AnchorPane>
                     </items>

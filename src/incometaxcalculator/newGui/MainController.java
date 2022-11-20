@@ -6,22 +6,27 @@ import incometaxcalculator.gui.TaxpayerData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class MainController {
+public class MainController implements Initializable {
 
     @FXML
     private Button selectBtn;
+    @FXML private Button deleteBtn;
     @FXML
     private ListView<Integer> taxpayerList;
     private final TaxpayerManager taxpayerManager = new TaxpayerManager();
@@ -67,18 +72,31 @@ public class MainController {
     @FXML
     void selectTaxpayer(MouseEvent event) throws IOException {
 
-        int trn = taxpayerList.getSelectionModel().getSelectedItem();
+
+        int trn = taxpayerList.getSelectionModel().getSelectedItem(); //Get the selected item from the list
         String fullName = taxpayerManager.getTaxpayerFullName(trn);
         String status = taxpayerManager.getTaxpayerStatus(trn);
         String income = taxpayerManager.getTaxpayerIncome(trn);
+        TaxpayerDataController taxPayer = new TaxpayerDataController(fullName, income, status, trn); //Create TaxPayerController to pass the data in the new window.
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("TaxpayerDataScene.fxml"));
-        TaxpayerDataController taxPayer = new TaxpayerDataController(fullName, income, status, trn);
         loader.setController(taxPayer);
-
-        Stage stage = (Stage) selectBtn.getScene().getWindow();
         Parent root = loader.load();
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        Stage primaryStage = new Stage();
+
+        primaryStage.setTitle("Taxpayer Data");
+        primaryStage.setScene(scene);
+
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        primaryStage.show();
     }
 
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        selectBtn.disableProperty().bind(taxpayerList.getSelectionModel().selectedItemProperty().isNull());
+        deleteBtn.disableProperty().bind(taxpayerList.getSelectionModel().selectedItemProperty().isNull());
+    }
 }
