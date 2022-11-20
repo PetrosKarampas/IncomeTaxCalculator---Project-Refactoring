@@ -38,12 +38,11 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="182.0" prefWidth="598.0" style="-fx-background-color: #deb887;">
                <children>
-                  <Text disable="true" fill="BLUE" layoutX="-1.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taxpayers Registration Numbers" textAlignment="CENTER" wrappingWidth="600.0">
+                  <Text disable="true" fill="BLUE" layoutX="-1.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taxpayer Registration Numbers" textAlignment="CENTER" wrappingWidth="600.0">
                      <font>
                         <Font name="Times New Roman" size="30.0" />
                      </font>
                   </Text>
-                  <Button layoutX="523.0" layoutY="13.0" mnemonicParsing="false" text="Scene 2" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">

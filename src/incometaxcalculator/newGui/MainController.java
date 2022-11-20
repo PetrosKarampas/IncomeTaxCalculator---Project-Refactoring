@@ -2,7 +2,6 @@ package incometaxcalculator.newGui;
 
 import incometaxcalculator.data.management.TaxpayerManager;
 import incometaxcalculator.exceptions.*;
-import incometaxcalculator.gui.TaxpayerData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,16 +18,13 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    @FXML
-    private Button selectBtn;
+    @FXML private Button selectBtn;
     @FXML private Button deleteBtn;
-    @FXML
-    private ListView<Integer> taxpayerList;
+    @FXML private ListView<Integer> taxpayerList;
     private final TaxpayerManager taxpayerManager = new TaxpayerManager();
 
     @FXML
@@ -48,6 +44,7 @@ public class MainController implements Initializable {
     void loadXMLDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongFileEndingException, WrongTaxpayerStatusException, WrongReceiptDateException {
         loadDocument("xml");
     }
+
     private void loadDocument(String fileType) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException {
         FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(fileType + " files", "*." + fileType));
@@ -71,8 +68,6 @@ public class MainController implements Initializable {
 
     @FXML
     void selectTaxpayer(MouseEvent event) throws IOException {
-
-
         int trn = taxpayerList.getSelectionModel().getSelectedItem(); //Get the selected item from the list
         String fullName = taxpayerManager.getTaxpayerFullName(trn);
         String status = taxpayerManager.getTaxpayerStatus(trn);
@@ -87,12 +82,9 @@ public class MainController implements Initializable {
 
         primaryStage.setTitle("Taxpayer Data");
         primaryStage.setScene(scene);
-
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.show();
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
