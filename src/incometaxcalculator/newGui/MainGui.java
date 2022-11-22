@@ -11,12 +11,11 @@ import java.util.Objects;
 
 public class MainGui extends Application{
 
-
     public static void main(String[] args) {
         Application.launch();
     }
 
-    @Override // Similar to main method for jfx
+    @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Main.fxml")));
         Image logo = new Image("/incometaxcalculator/images/Logo.png");

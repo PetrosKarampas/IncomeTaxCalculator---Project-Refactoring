@@ -15,33 +15,33 @@
 <Street> Fukosima </Street>
 <Number> 5 </Number>
 
-<ReceiptID> 2 </ReceiptID>
-<Date> 11/11/2111 </Date>
-<Kind> Other </Kind>
-<Amount> 1000.0 </Amount>
-<Company> ewr </Company>
-<Country> werw </Country>
-<City> ewr </City>
-<Street> were </Street>
-<Number> 4 </Number>
+<ReceiptID> 1 </ReceiptID>
+<Date> 3/12/2023 </Date>
+<Kind> Entertainment </Kind>
+<Amount> 299.99 </Amount>
+<Company> Tirana </Company>
+<Country> Albania </Country>
+<City> Tirana </City>
+<Street> Rotkar </Street>
+<Number> 69 </Number>
 
 <ReceiptID> 3 </ReceiptID>
-<Date> 2/2/2019 </Date>
-<Kind> Travel </Kind>
-<Amount> 100.0 </Amount>
-<Company> sdfsd </Company>
-<Country> sdfssdf </Country>
-<City> sdfsd </City>
-<Street> sdfs </Street>
-<Number> 1 </Number>
+<Date> 9/12/2022 </Date>
+<Kind> Other </Kind>
+<Amount> 300.0 </Amount>
+<Company> Cupertino </Company>
+<Country> USA </Country>
+<City> Cupertino </City>
+<Street> Apple st </Street>
+<Number> 23 </Number>
 
-<ReceiptID> 4 </ReceiptID>
-<Date> 11/12/2021 </Date>
-<Kind> Travel </Kind>
-<Amount> 4535.0 </Amount>
-<Company> wer </Company>
-<Country> wer </Country>
-<City> wer </City>
-<Street> wer </Street>
-<Number> 4 </Number>
+<ReceiptID> 5 </ReceiptID>
+<Date> 15/11/2025 </Date>
+<Kind> Health </Kind>
+<Amount> 89.0 </Amount>
+<Company> Beijing </Company>
+<Country> China </Country>
+<City> Beijing </City>
+<Street> DatStreet </Street>
+<Number> 68 </Number>
 

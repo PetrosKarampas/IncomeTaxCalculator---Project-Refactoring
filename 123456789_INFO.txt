@@ -15,33 +15,33 @@ City: Drama
 Street: Fukosima
 Number: 5
 
-Receipt ID: 2
-Date: 11/11/2111
-Kind: Other
-Amount: 1000.0
-Company: ewr
-Country: werw
-City: ewr
-Street: were
-Number: 4
+Receipt ID: 1
+Date: 3/12/2023
+Kind: Entertainment
+Amount: 299.99
+Company: QifshaRopt Inc
+Country: Albania
+City: Tirana
+Street: Rotkar
+Number: 69
 
 Receipt ID: 3
-Date: 2/2/2019
-Kind: Travel
-Amount: 100.0
-Company: sdfsd
-Country: sdfssdf
-City: sdfsd
-Street: sdfs
-Number: 1
+Date: 9/12/2022
+Kind: Other
+Amount: 300.0
+Company: Apple
+Country: USA
+City: Cupertino
+Street: Apple st
+Number: 23
 
-Receipt ID: 4
-Date: 11/12/2021
-Kind: Travel
-Amount: 4535.0
-Company: wer
-Country: wer
-City: wer
-Street: wer
-Number: 4
+Receipt ID: 5
+Date: 15/11/2025
+Kind: Health
+Amount: 89.0
+Company: DatHospital
+Country: China
+City: Beijing
+Street: DatStreet
+Number: 68
 
