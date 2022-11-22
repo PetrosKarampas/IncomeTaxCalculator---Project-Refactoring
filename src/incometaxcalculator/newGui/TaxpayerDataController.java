@@ -14,8 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.PieChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -63,6 +62,7 @@ public class TaxpayerDataController implements Initializable{
 
         primaryStage.setTitle("Receipt data");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.showAndWait();
 
@@ -83,6 +83,9 @@ public class TaxpayerDataController implements Initializable{
     void viewChartReport(ActionEvent event) throws IOException {
         HashMap<Integer, Receipt> receipts = taxpayerManager.getReceiptHashMap(trnText);
 
+        /*
+         * Setup PieChart
+         */
         ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList(
                 new PieChart.Data("Entertainment", taxpayerManager.getTaxpayerReceiptAmountPerKind(trnText, 0)),
                 new PieChart.Data("Basic", taxpayerManager.getTaxpayerReceiptAmountPerKind(trnText, 1)),
@@ -94,11 +97,41 @@ public class TaxpayerDataController implements Initializable{
         PieChart pChart = new PieChart(pieData);
 
         Group root = new Group(pChart);
-        Scene scene = new Scene(root, 500, 500);
+        Scene scene = new Scene(root, 450, 450);
         Stage pieStage = new Stage();
         pieStage.setTitle("Pie Chart");
         pieStage.setScene(scene);
+        pieStage.setResizable(false);
         pieStage.show();
+
+        /*
+         * Setup BarChart
+         */
+        Stage barChartStage = new Stage();
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        final BarChart<String,Number> barChart = new BarChart<String, Number>(xAxis, yAxis);
+        barChart.setTitle("Tax Analysis");
+        yAxis.setLabel("Euro €");
+
+        XYChart.Series set = new XYChart.Series<>();
+        set.setName("Tax");
+        double basicTax = taxpayerManager.getTaxpayerBasicTax(trnText);
+        double taxVariation = taxpayerManager.getTaxpayerVariationTaxOnReceipts(trnText);
+        double totalTax = taxpayerManager.getTaxpayerTotalTax(trnText);
+
+        set.getData().add(new XYChart.Data<>("Basic", basicTax));
+        if(taxVariation < 0)
+            set.getData().add(new XYChart.Data<>("Decrease", -taxVariation));
+        else
+            set.getData().add(new XYChart.Data<>("Increase", taxVariation));
+        set.getData().add(new XYChart.Data<>("Total", totalTax));
+
+        Scene barChartScene = new Scene(barChart, 450, 450);
+        barChart.getData().addAll(set);
+        barChartStage.setScene(barChartScene);
+        barChartStage.setResizable(false);
+        barChartStage.show();
     }
 
     @FXML
@@ -120,5 +153,4 @@ public class TaxpayerDataController implements Initializable{
             receiptList.getItems().add(ID);
                 });
     }
-
 }

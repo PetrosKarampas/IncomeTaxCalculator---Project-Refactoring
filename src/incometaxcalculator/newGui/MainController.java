@@ -82,6 +82,7 @@ public class MainController implements Initializable {
 
         primaryStage.setTitle("Taxpayer Data");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.show();
     }
