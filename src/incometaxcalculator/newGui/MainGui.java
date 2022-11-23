@@ -25,6 +25,5 @@ public class MainGui extends Application{
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.show();
-
     }
 }

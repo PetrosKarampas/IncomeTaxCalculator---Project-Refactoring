@@ -100,6 +100,8 @@ public class TaxpayerDataController implements Initializable{
         Scene scene = new Scene(root, 450, 450);
         Stage pieStage = new Stage();
         pieStage.setTitle("Pie Chart");
+        pieStage.setX(300);
+        pieStage.setY(400);
         pieStage.setScene(scene);
         pieStage.setResizable(false);
         pieStage.show();
@@ -112,7 +114,7 @@ public class TaxpayerDataController implements Initializable{
         final NumberAxis yAxis = new NumberAxis();
         final BarChart<String,Number> barChart = new BarChart<String, Number>(xAxis, yAxis);
         barChart.setTitle("Tax Analysis");
-        yAxis.setLabel("Euro €");
+        yAxis.setLabel("Dollars $");
 
         XYChart.Series set = new XYChart.Series<>();
         set.setName("Tax");
@@ -130,14 +132,17 @@ public class TaxpayerDataController implements Initializable{
         Scene barChartScene = new Scene(barChart, 450, 450);
         barChart.getData().addAll(set);
         barChartStage.setScene(barChartScene);
+        barChartStage.setX(900);
+        barChartStage.setY(400);
         barChartStage.setResizable(false);
         barChartStage.show();
     }
 
     @FXML
-    public void updateTaxpayerData() {
+    public void updateTaxpayerData() throws WrongFileFormatException, IOException {
         System.out.println(this.fullName.getText() + " \n" + this.income.getText());
         taxpayerManager.getTaxpayer(trnText).setIncome(Float.parseFloat(this.income.getText()));
+        taxpayerManager.updateFiles(trnText);
     }
 
     @Override

@@ -7,7 +7,7 @@ public class FileReaderFactory {
 
     public FileReaderFactory() {}
 
-    public FileReaderClass createFileReader(@NotNull String fileFormat) throws WrongFileFormatException{
+    public FileReader createFileReader(@NotNull String fileFormat) throws WrongFileFormatException{
         if(fileFormat.equals("txt"))
             return new TXTFileReader();
         else if(fileFormat.equals("xml"))

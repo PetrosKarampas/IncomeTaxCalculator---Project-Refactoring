@@ -107,7 +107,7 @@ public class TaxpayerManager {
 
     String[] values = fileName.split("\\.");
     String fileFormat = values[1];
-    FileReaderClass fileReader = fileReaderFactory.createFileReader(fileFormat);
+    FileReader fileReader = fileReaderFactory.createFileReader(fileFormat);
     fileReader.readFile(fileName);
     return true;
   }
@@ -181,8 +181,6 @@ public class TaxpayerManager {
   {
     return taxpayerHashMap.get(taxRegistrationNumber).getReceiptHashMap();
   }
-
-
 
   public static HashMap<Integer, Taxpayer> getTaxpayerHashMap() {
     return taxpayerHashMap;

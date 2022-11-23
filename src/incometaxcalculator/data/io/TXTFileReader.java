@@ -4,7 +4,7 @@ import incometaxcalculator.exceptions.WrongFileFormatException;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 
-public class TXTFileReader extends FileReaderClass {
+public class TXTFileReader extends FileReader {
   protected int getReceiptID(@NotNull String[] values) {
     System.out.println(Arrays.toString(values));
     if (values[0].equals("Receipt")) {

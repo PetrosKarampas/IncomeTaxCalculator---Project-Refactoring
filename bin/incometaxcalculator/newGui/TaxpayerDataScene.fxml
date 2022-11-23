@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <SplitPane dividerPositions="0.6332417582417582" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="261.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <items>
       <Pane prefHeight="265.0" prefWidth="219.0">
@@ -30,7 +29,7 @@
                      <children>
                         <TextField fx:id="fullName" editable="false" prefHeight="26.0" prefWidth="138.0" />
                         <TextField fx:id="taxRegistrationNumber" editable="false" prefHeight="26.0" prefWidth="138.0" />
-                        <TextField fx:id="status" prefHeight="26.0" prefWidth="138.0" />
+                        <TextField fx:id="status" editable="false" prefHeight="26.0" prefWidth="138.0" />
                         <TextField fx:id="income" prefHeight="26.0" prefWidth="138.0" />
                      </children>
                   </VBox>

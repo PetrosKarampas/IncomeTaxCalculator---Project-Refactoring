@@ -6,23 +6,25 @@ import incometaxcalculator.data.management.TaxpayerManager;
 import incometaxcalculator.exceptions.WrongReceiptDateException;
 import incometaxcalculator.exceptions.WrongFileFormatException;
 import incometaxcalculator.exceptions.WrongTaxpayerStatusException;
+import org.jetbrains.annotations.NotNull;
 
-public abstract class FileReader /*implements FileReaderInterface*/{
+public abstract class FileReader implements FileReaderInterface {
 
-  //protected abstract int getReceiptID(String[] values);
- // protected abstract String getLastValueFromLine(String fieldsLine) throws WrongFileFormatException;
+  protected abstract int getReceiptID(String[] values);
+  protected abstract String getLastValueFromLine(String fieldsLine) throws WrongFileFormatException;
 
-  protected abstract int getReceiptID(BufferedReader inputStream) throws NumberFormatException, IOException;
-
-  protected abstract String getValueOfField(String fieldsLine) throws WrongFileFormatException;
-
-  /*public int checkForReceipt(@NotNull BufferedReader inputStream) throws NumberFormatException, IOException
+  public int checkForReceipt(@NotNull BufferedReader inputStream) throws NumberFormatException, IOException
   {
    String line;
-    while(!isEmpty(line = inputStream.readLine())) {
-      System.out.println("OK3");
-      String[] values = line.split(" ", 3);
-      return getReceiptID(values);
+   int receiptID;
+   System.out.println(line = inputStream.readLine());
+   while(!isEmpty(line = inputStream.readLine())) {
+     String[] values = line.split(" ", 3);
+     receiptID = getReceiptID(values);
+     if (receiptID == -1)
+       continue;
+     else
+       return receiptID;
     }
     return -1;
   }
@@ -31,10 +33,9 @@ public abstract class FileReader /*implements FileReaderInterface*/{
   {
     if (isEmpty(fieldsLine))
       throw new WrongFileFormatException();
-    System.out.println("OK4");
 
     return getLastValueFromLine(fieldsLine);
-  }*/
+  }
 
   public void readFile(String fileName) throws NumberFormatException, IOException, WrongTaxpayerStatusException,
       WrongFileFormatException, WrongReceiptDateException
@@ -48,14 +49,13 @@ public abstract class FileReader /*implements FileReaderInterface*/{
     taxpayerManager.createTaxpayer(fullName, taxRegistrationNumber, status, income);
     while (readReceipt(inputStream, taxRegistrationNumber));
   }
-  protected boolean readReceipt(BufferedReader inputStream, int taxRegistrationNumber) throws WrongFileFormatException,
-          IOException, WrongReceiptDateException
+  protected boolean readReceipt(BufferedReader inputStream, int taxRegistrationNumber) throws WrongFileFormatException, IOException, WrongReceiptDateException
   {
     TaxpayerManager taxpayerManager = new TaxpayerManager();
     int receiptID;
-    if ((receiptID = getReceiptID(inputStream)) < 0)
+    if ((receiptID = checkForReceipt(inputStream)) == -1){
       return false;
-
+    }
     String issueDate    = getValueOfField(inputStream.readLine());
     String kind         = getValueOfField(inputStream.readLine());
     float amount        = Float.parseFloat(getValueOfField(inputStream.readLine()));
