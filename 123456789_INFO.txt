@@ -1,7 +1,7 @@
 Name: Apostolos Zarras
 AFM: 123456789
 Status: Married Filing Jointly
-Income: 2542654.0
+Income: 254269.0
 
 Receipts:
 

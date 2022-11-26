@@ -69,6 +69,15 @@ public class TaxpayerDataController implements Initializable{
         receiptList.getItems().add(newReceipt.getReceiptId());
     }
 
+    @FXML
+    private void saveAsTXT() throws WrongFileFormatException, IOException {
+        taxpayerManager.saveLogFile(trnText, "_LOG.txt");
+    }
+
+    @FXML
+    private void saveAsXML() throws WrongFileFormatException, IOException {
+        taxpayerManager.saveLogFile(trnText, "_LOG.xml");
+    }
 
     @FXML
     void removeReceipt(ActionEvent event) throws WrongFileFormatException, IOException, ReceiptIdDoesNotExistException {
