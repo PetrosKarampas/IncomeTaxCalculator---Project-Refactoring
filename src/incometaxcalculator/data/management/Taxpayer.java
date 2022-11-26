@@ -132,4 +132,8 @@ public abstract class Taxpayer {
   public double getBasicTax() {
     return calculateBasicTax();
   }
+
+  public void setIncome(float income) {
+    this.income = income;
+  }
 }

@@ -1,7 +1,7 @@
 Name: Apostolos Zarras
 AFM: 123456789
 Status: Married Filing Jointly
-Income: 254240
+Income: 2542654.0
 
 Receipts:
 
@@ -46,16 +46,6 @@ Street: wer
 Number: 4
 
 Receipt ID: 20
-Date: 8/11/2022
-Kind: Entertainment
-Amount: 1999.0
-Company: TEST
-Country: Greece
-City: Ioannina
-Street: Smyrnhs
-Number: 15
-
-Receipt ID: 12
 Date: 8/11/2022
 Kind: Entertainment
 Amount: 1999.0

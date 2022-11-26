@@ -68,7 +68,7 @@ public class TaxpayerManager {
       throw new ReceiptIdDoesNotExistException();
   }
 
-  private void updateFiles(int taxRegistrationNumber) throws IOException, WrongFileFormatException {
+  public void updateFiles(int taxRegistrationNumber) throws IOException, WrongFileFormatException {
     FileFactory fileFactory = new FileFactory();
     FileWriterFactory fileWriterFactory = new FileWriterFactory();
 
