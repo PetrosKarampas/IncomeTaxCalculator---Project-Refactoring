@@ -5,9 +5,11 @@ import incometaxcalculator.exceptions.ReceiptAlreadyExistsException;
 import incometaxcalculator.exceptions.WrongFileFormatException;
 import incometaxcalculator.exceptions.WrongReceiptDateException;
 import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -22,7 +24,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class ReceiptController{
+public class ReceiptController implements Initializable{
 
     @FXML private Button submitReceiptBtn;
     @FXML private TextField receiptId;
@@ -36,13 +38,20 @@ public class ReceiptController{
     @FXML private TextField number;
 
     private int taxRegistrationNumber;
+    private final TaxpayerDataController taxpayerDataController;
     private final TaxpayerManager manager = new TaxpayerManager();
 
-    @FXML public void submitReceipt(){
+    public ReceiptController(TaxpayerDataController controller) {
+        taxpayerDataController = controller;
+    }
+
+    @FXML public void submitReceipt() throws WrongFileFormatException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException {
         LocalDate localDate = date.getValue();
         String correctDate = localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-        try {
+        int id = Integer.parseInt(receiptId.getText());
+
+        if (!manager.containsReceipt(id)) {
             manager.addReceipt(Integer.parseInt(receiptId.getText()),
                     correctDate,
                     Float.parseFloat(amount.getText()),
@@ -53,8 +62,13 @@ public class ReceiptController{
                     street.getText(),
                     Integer.parseInt(number.getText()),
                     taxRegistrationNumber);
-        } catch (IOException | WrongReceiptDateException | ReceiptAlreadyExistsException | WrongFileFormatException e1) {
-            System.out.println(Arrays.toString(e1.getStackTrace()));
+
+            taxpayerDataController.addReceiptIdToList(Integer.parseInt(receiptId.getText()));
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Receipt id error");
+            alert.setHeaderText("Receipt id already exists!");
+            alert.showAndWait();
         }
 
         Stage stage = (Stage) submitReceiptBtn.getScene().getWindow();
@@ -67,5 +81,18 @@ public class ReceiptController{
 
     public int getReceiptId() {
         return Integer.parseInt(receiptId.getText());
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        submitReceiptBtn.disableProperty().bind(Bindings.isEmpty(receiptId.textProperty())
+                .or(Bindings.isEmpty(kind.textProperty()))
+                .or(Bindings.isEmpty(amount.textProperty()))
+                .or(Bindings.isEmpty(company.textProperty()))
+                .or(Bindings.isEmpty(country.textProperty()))
+                .or(Bindings.isEmpty(city.textProperty()))
+                .or(Bindings.isEmpty(street.textProperty()))
+                .or(Bindings.isEmpty(number.textProperty()))
+                .or(date.valueProperty().isNull()));
     }
 }

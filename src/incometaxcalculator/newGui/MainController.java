@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
@@ -36,12 +37,12 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    void loadTxtDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongFileEndingException, WrongTaxpayerStatusException, WrongReceiptDateException {
+    void loadTxtDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException {
         loadDocument("txt");
     }
 
     @FXML
-    void loadXMLDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongFileEndingException, WrongTaxpayerStatusException, WrongReceiptDateException {
+    void loadXMLDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException {
         loadDocument("xml");
     }
 
@@ -55,14 +56,23 @@ public class MainController implements Initializable {
             int registrationNumber = Integer.parseInt(selected.getName().substring(0,9));
 
             if (taxpayerManager.containsTaxpayer(registrationNumber)) {
-                System.out.println("Taxpayer already exists");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Loading Error!");
+                alert.setHeaderText("Taxpayer already exists");
+                alert.showAndWait();
             }
             else {
                 taxpayerManager.loadTaxpayer(fileName);
                 taxpayerList.getItems().add(registrationNumber);
             }
-        }else{
-            System.out.println("file was not selected");
+        }else if (selected != null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("File selection error");
+            alert.setHeaderText("Please select a compatible file!");
+            alert.setContentText("Compatible file format:   (ΑΦΜ)_INFO." + fileType);
+            alert.showAndWait();
+        }else {
+            System.out.println("file selection got canceled!");
         }
     }
 

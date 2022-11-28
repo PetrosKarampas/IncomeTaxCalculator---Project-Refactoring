@@ -50,7 +50,7 @@ public class TaxpayerDataController implements Initializable{
 
     @FXML
     void addReceipt(ActionEvent event) throws WrongReceiptDateException, IOException {
-        ReceiptController newReceipt = new ReceiptController();
+        ReceiptController newReceipt = new ReceiptController(this);
         newReceipt.setTaxRegistrationNumber(this.trnText);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ReceiptWindow.fxml"));
@@ -65,8 +65,10 @@ public class TaxpayerDataController implements Initializable{
         primaryStage.setResizable(false);
         primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.showAndWait();
+    }
 
-        receiptList.getItems().add(newReceipt.getReceiptId());
+    void addReceiptIdToList(int id) {
+        receiptList.getItems().add(id);
     }
 
     @FXML

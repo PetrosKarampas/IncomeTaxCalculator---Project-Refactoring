@@ -55,3 +55,23 @@ City: Ioannina
 Street: Smyrnhs
 Number: 15
 
+Receipt ID: 5
+Date: 19/12/2022
+Kind: Health
+Amount: 1500.0
+Company: Hospital
+Country: Greece
+City: Athens
+Street: Papandreou
+Number: 69
+
+Receipt ID: 6
+Date: 2/11/2022
+Kind: Basic
+Amount: 34.0
+Company: Apple
+Country: IUHAS
+City: adsj
+Street: iuh
+Number: 43
+
