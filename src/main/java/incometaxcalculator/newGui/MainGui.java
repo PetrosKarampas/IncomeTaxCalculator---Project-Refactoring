@@ -17,8 +17,8 @@ public class MainGui extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Main.fxml")));
-        Image logo = new Image("/incometaxcalculator/images/Logo.png");
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Main.fxml")));
+        Image logo = new Image("/Logo.png");
 
         stage.setTitle("Income Tax Calculator");
         stage.getIcons().add(logo);

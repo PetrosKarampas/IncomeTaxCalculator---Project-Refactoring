@@ -78,13 +78,14 @@ public class MainController implements Initializable {
 
     @FXML
     void selectTaxpayer(MouseEvent event) throws IOException {
-        int trn = taxpayerList.getSelectionModel().getSelectedItem(); //Get the selected item from the list
+        int trn = taxpayerList.getSelectionModel().getSelectedItem();
         String fullName = taxpayerManager.getTaxpayerFullName(trn);
         String status = taxpayerManager.getTaxpayerStatus(trn);
         String income = taxpayerManager.getTaxpayerIncome(trn);
-        TaxpayerDataController taxPayer = new TaxpayerDataController(fullName, income, status, trn); //Create TaxPayerController to pass the data in the new window.
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("TaxpayerDataScene.fxml"));
+        TaxpayerDataController taxPayer = new TaxpayerDataController(fullName, income, status, trn);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/TaxpayerDataScene.fxml"));
         loader.setController(taxPayer);
         Parent root = loader.load();
         Scene scene = new Scene(root);
