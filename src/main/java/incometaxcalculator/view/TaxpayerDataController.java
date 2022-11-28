@@ -1,4 +1,4 @@
-package incometaxcalculator.newGui;
+package incometaxcalculator.view;
 
 import incometaxcalculator.data.management.Receipt;
 import incometaxcalculator.data.management.TaxpayerManager;
