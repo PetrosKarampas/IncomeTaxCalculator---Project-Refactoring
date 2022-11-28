@@ -25,6 +25,16 @@ City: ewr
 Street: were
 Number: 4
 
+Receipt ID: 50
+Date: 8/11/2022
+Kind: Entertainment
+Amount: 1999.0
+Company: TEST
+Country: Greece
+City: Ioannina
+Street: Smyrnhs
+Number: 15
+
 Receipt ID: 3
 Date: 2/2/2019
 Kind: Travel
@@ -44,16 +54,6 @@ Country: wer
 City: wer
 Street: wer
 Number: 4
-
-Receipt ID: 20
-Date: 8/11/2022
-Kind: Entertainment
-Amount: 1999.0
-Company: TEST
-Country: Greece
-City: Ioannina
-Street: Smyrnhs
-Number: 15
 
 Receipt ID: 5
 Date: 19/12/2022

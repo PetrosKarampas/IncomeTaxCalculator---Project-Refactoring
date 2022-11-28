@@ -1,5 +1,3 @@
-package incometaxcalculator.test;
-
 import incometaxcalculator.data.management.TaxpayerManager;
 import incometaxcalculator.exceptions.*;
 
@@ -112,14 +110,14 @@ class TaxpayerManagerTest {
     }
 
     @org.junit.jupiter.api.Test
-    void saveLogFileTest1() throws WrongFileFormatException, IOException
-    {
+    void saveLogFileTest1() throws WrongFileFormatException, IOException, WrongReceiptKindException, WrongTaxpayerStatusException, WrongReceiptDateException {
+        taxpayerManager.loadTaxpayer("123456789_INFO.txt");
         assertTrue(taxpayerManager.saveLogFile(123456789, "_LOG.txt"));
     }
 
     @org.junit.jupiter.api.Test
-    void saveLogFileTest2() throws  WrongFileFormatException, IOException
-    {
+    void saveLogFileTest2() throws WrongFileFormatException, IOException, WrongReceiptKindException, WrongTaxpayerStatusException, WrongReceiptDateException {
+        taxpayerManager.loadTaxpayer("123456789_INFO.xml");
         assertTrue(taxpayerManager.saveLogFile(123456789, "_LOG.xml"));
     }
 
