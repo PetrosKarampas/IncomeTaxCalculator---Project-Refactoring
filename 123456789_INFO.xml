@@ -55,16 +55,6 @@
 <Street> wer </Street>
 <Number> 4 </Number>
 
-<ReceiptID> 5 </ReceiptID>
-<Date> 19/12/2022 </Date>
-<Kind> Health </Kind>
-<Amount> 1500.0 </Amount>
-<Company> Athens </Company>
-<Country> Greece </Country>
-<City> Athens </City>
-<Street> Papandreou </Street>
-<Number> 69 </Number>
-
 <ReceiptID> 6 </ReceiptID>
 <Date> 2/11/2022 </Date>
 <Kind> Basic </Kind>
