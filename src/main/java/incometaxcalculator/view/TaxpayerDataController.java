@@ -108,7 +108,7 @@ public class TaxpayerDataController implements Initializable{
         PieChart pChart = new PieChart(pieData);
 
         Group root = new Group(pChart);
-        Scene scene = new Scene(root, 450, 450);
+        Scene scene = new Scene(root, 500, 500);
         Stage pieStage = new Stage();
         pieStage.setTitle("Pie Chart");
         pieStage.setX(300);
@@ -140,7 +140,7 @@ public class TaxpayerDataController implements Initializable{
             set.getData().add(new XYChart.Data<>("Increase", taxVariation));
         set.getData().add(new XYChart.Data<>("Total", totalTax));
 
-        Scene barChartScene = new Scene(barChart, 450, 450);
+        Scene barChartScene = new Scene(barChart, 500, 500);
         barChart.getData().addAll(set);
         barChartStage.setScene(barChartScene);
         barChartStage.setX(900);
@@ -153,6 +153,7 @@ public class TaxpayerDataController implements Initializable{
     public void updateTaxpayerData() throws WrongFileFormatException, IOException {
         System.out.println(this.fullName.getText() + " \n" + this.income.getText());
         taxpayerManager.getTaxpayer(trnText).setIncome(Float.parseFloat(this.income.getText()));
+        taxpayerManager.getTaxpayer(trnText).setFullName(this.fullName.getText());
         taxpayerManager.updateFiles(trnText);
     }
 

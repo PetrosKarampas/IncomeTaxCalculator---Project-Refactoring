@@ -49,6 +49,7 @@ public abstract class FileReaderClass implements FileReaderInterface {
     taxpayerManager.createTaxpayer(fullName, taxRegistrationNumber, status, income);
     while (readReceipt(inputStream, taxRegistrationNumber));
   }
+
   protected boolean readReceipt(BufferedReader inputStream, int taxRegistrationNumber) throws WrongFileFormatException, IOException, WrongReceiptDateException
   {
     TaxpayerManager taxpayerManager = new TaxpayerManager();
@@ -70,6 +71,7 @@ public abstract class FileReaderClass implements FileReaderInterface {
     );
     return true;
   }
+
   protected boolean isEmpty(String line) {
     return line == null;
   }

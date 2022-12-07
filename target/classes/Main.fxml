@@ -15,21 +15,12 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <Menu mnemonicParsing="false" text="Load">
-                    <items>
-                      <MenuItem mnemonicParsing="false" onAction="#loadTxtDocument" text="Load TXT file" />
-                        <MenuItem mnemonicParsing="false" onAction="#loadXMLDocument" text="Load XML file" />
-                    </items>
-                  </Menu>
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Info">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
+            <Menu mnemonicParsing="false" text="Load file">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#loadTxtDocument" text="Load TXT file" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadXMLDocument" text="Load XML file" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

@@ -2,12 +2,10 @@ package incometaxcalculator.data.management;
 
 import java.util.HashMap;
 
-//import incometaxcalculator.exceptions.WrongReceiptKindException;
-
 public abstract class Taxpayer {
 
   protected float income;
-  private final String fullName;
+  private String fullName;
   private final int taxRegistrationNumber;
   private final float[] receiptsAmountPerKind = new float[5];
   private int totalReceipts = 0;
@@ -32,18 +30,6 @@ public abstract class Taxpayer {
         totalReceipts++;
       }
     }
-
-    /*
-     * if (receipt.getKind().equals("Entertainment")) { amountPerReceiptsKind[ENTERTAINMENT] +=
-     * receipt.getAmount(); } else if (receipt.getKind().equals("Basic")) {
-     * amountPerReceiptsKind[BASIC] += receipt.getAmount(); } else if
-     * (receipt.getKind().equals("Travel")) { amountPerReceiptsKind[TRAVEL] += receipt.getAmount();
-     * } else if (receipt.getKind().equals("Health")) { amountPerReceiptsKind[HEALTH] +=
-     * receipt.getAmount(); } else if (receipt.getKind().equals("Other")) {
-     * amountPerReceiptsKind[OTHER] += receipt.getAmount(); } else { throw new
-     * WrongReceiptKindException(); } receiptHashMap.put(receipt.getId(), receipt);
-     * totalReceiptsGathered++;
-     */
   }
 
   public void removeReceipt(int receiptId) {
@@ -56,16 +42,6 @@ public abstract class Taxpayer {
         totalReceipts--;
       }
     }
-    /*
-     * if (receipt.getKind().equals("Entertainment")) { receiptsAmountPerKind[ENTERTAINMENT] -=
-     * receipt.getAmount(); } else if (receipt.getKind().equals("Basic")) {
-     * receiptsAmountPerKind[BASIC] -= receipt.getAmount(); } else if
-     * (receipt.getKind().equals("Travel")) { receiptsAmountPerKind[TRAVEL] -= receipt.getAmount();
-     * } else if (receipt.getKind().equals("Health")) { receiptsAmountPerKind[HEALTH] -=
-     * receipt.getAmount(); } else if (receipt.getKind().equals("Other")) {
-     * receiptsAmountPerKind[OTHER] -= receipt.getAmount(); } else { throw new
-     * WrongReceiptKindException(); } totalReceiptsGathered--; receiptHashMap.remove(receiptId);
-     */
   }
 
   public void initializereceiptKindAndIndexIntoArrayHashMap() {
@@ -135,5 +111,9 @@ public abstract class Taxpayer {
 
   public void setIncome(float income) {
     this.income = income;
+  }
+
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
   }
 }

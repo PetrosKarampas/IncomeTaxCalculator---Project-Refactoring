@@ -7,7 +7,7 @@ public class SingleTaxpayer extends Taxpayer {
   }
 
   public double calculateBasicTax() {
-    int[]   limitIncomes = {24680, 81080, 90000, 152540, Integer.MAX_VALUE};
+    int[] limitIncomes = {24680, 81080, 90000, 152540, Integer.MAX_VALUE};
     float[] taxPercentages = {0.0535f, 0.0705f, 0.0785f, 0.0785f, 0.0985f};
     float[] constants = {0f, 1320.38f, 5296.58f, 5996.8f, 10906.19f};
     float basicTax = 0f;
