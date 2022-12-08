@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="IncomeTaxCalculator" target="11" />
+      <module name="IncomeTaxCalculator" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>
