@@ -5,19 +5,16 @@ import incometaxcalculator.exceptions.ReceiptAlreadyExistsException;
 import incometaxcalculator.exceptions.WrongFileFormatException;
 import incometaxcalculator.exceptions.WrongReceiptDateException;
 import javafx.beans.binding.Bindings;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class ReceiptController implements Initializable{
@@ -25,7 +22,8 @@ public class ReceiptController implements Initializable{
     @FXML private Button submitReceiptBtn;
     @FXML private TextField receiptId;
     @FXML private DatePicker date;
-    @FXML private TextField kind;
+    @FXML private ChoiceBox<String> kind;
+    private String receiptKind;
     @FXML private TextField amount;
     @FXML private TextField company;
     @FXML private TextField country;
@@ -51,7 +49,7 @@ public class ReceiptController implements Initializable{
             manager.addReceipt(Integer.parseInt(receiptId.getText()),
                     correctDate,
                     Float.parseFloat(amount.getText()),
-                    kind.getText(),
+                    receiptKind,
                     company.getText(),
                     country.getText(),
                     city.getText(),
@@ -71,6 +69,10 @@ public class ReceiptController implements Initializable{
         stage.close();
     }
 
+    private void getKind(ActionEvent event) {
+        receiptKind = kind.getValue();
+    }
+
     public void setTaxRegistrationNumber(int taxRegistrationNumber) {
         this.taxRegistrationNumber = taxRegistrationNumber;
     }
@@ -81,14 +83,19 @@ public class ReceiptController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        final String[] receiptKinds = {"Basic", "Entertainment", "Health", "Travel", "Other"};
+        kind.getItems().addAll(receiptKinds);
+        kind.setOnAction(this::getKind);
+
         submitReceiptBtn.disableProperty().bind(Bindings.isEmpty(receiptId.textProperty())
-                .or(Bindings.isEmpty(kind.textProperty()))
                 .or(Bindings.isEmpty(amount.textProperty()))
                 .or(Bindings.isEmpty(company.textProperty()))
                 .or(Bindings.isEmpty(country.textProperty()))
                 .or(Bindings.isEmpty(city.textProperty()))
                 .or(Bindings.isEmpty(street.textProperty()))
                 .or(Bindings.isEmpty(number.textProperty()))
-                .or(date.valueProperty().isNull()));
+                .or(date.valueProperty().isNull())
+                .or(kind.valueProperty().isNull())
+        );
     }
 }

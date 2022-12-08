@@ -4,9 +4,9 @@ Income: 254270.0
 Basic Tax: 18200.64453125
 Tax Increase: 1456.0515299547114
 Total Tax: 19656.69606120471
-TotalReceiptsGathered: 7
+TotalReceiptsGathered: 8
 Entertainment: 1999.0
-Basic: 285.0
+Basic: 3519.0
 Travel: 4635.0
 Health: 1500.0
 Other: 1000.0

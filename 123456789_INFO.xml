@@ -1,7 +1,7 @@
-<Name> Andrew Tate </Name>
+<Name> Elon Musk </Name>
 <AFM> 123456789 </AFM>
 <Status> Married Filing Jointly </Status>
-<Income> 254270.0 </Income>
+<Income> 254299.0 </Income>
 
 <Receipts>
 
@@ -15,6 +15,16 @@
 <Street> Fukosima </Street>
 <Number> 5 </Number>
 
+<ReceiptID> 1 </ReceiptID>
+<Date> 9/12/2022 </Date>
+<Kind> Basic </Kind>
+<Amount> 3234.0 </Amount>
+<Company> AS </Company>
+<Country> USA </Country>
+<City> AS </City>
+<Street> DSA </Street>
+<Number> 23 </Number>
+
 <ReceiptID> 2 </ReceiptID>
 <Date> 11/11/2111 </Date>
 <Kind> Other </Kind>
@@ -24,16 +34,6 @@
 <City> ewr </City>
 <Street> were </Street>
 <Number> 4 </Number>
-
-<ReceiptID> 50 </ReceiptID>
-<Date> 8/11/2022 </Date>
-<Kind> Entertainment </Kind>
-<Amount> 1999.0 </Amount>
-<Company> Ioannina </Company>
-<Country> Greece </Country>
-<City> Ioannina </City>
-<Street> Smyrnhs </Street>
-<Number> 15 </Number>
 
 <ReceiptID> 3 </ReceiptID>
 <Date> 2/2/2019 </Date>
@@ -74,4 +74,34 @@
 <City> adsj </City>
 <Street> iuh </Street>
 <Number> 43 </Number>
+
+<ReceiptID> 7 </ReceiptID>
+<Date> 7/12/2022 </Date>
+<Kind> Basic </Kind>
+<Amount> 567.0 </Amount>
+<Company> hjgfv </Company>
+<Country> ugavsd </Country>
+<City> hjgfv </City>
+<Street> uyjhfg </Street>
+<Number> 32 </Number>
+
+<ReceiptID> 8 </ReceiptID>
+<Date> 25/12/2022 </Date>
+<Kind> Entertainment </Kind>
+<Amount> 234.9 </Amount>
+<Company> Thessalonikh </Company>
+<Country> Greece </Country>
+<City> Thessalonikh </City>
+<Street> Pliatsiko </Street>
+<Number> 23 </Number>
+
+<ReceiptID> 9 </ReceiptID>
+<Date> 22/12/2022 </Date>
+<Kind> Health </Kind>
+<Amount> 234.0 </Amount>
+<Company> ATH </Company>
+<Country> GR </Country>
+<City> ATH </City>
+<Street> df </Street>
+<Number> 59 </Number>
 

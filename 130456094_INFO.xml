@@ -5,13 +5,53 @@
 
 <Receipts>
 
+<ReceiptID> 0 </ReceiptID>
+<Date> 16/12/2022 </Date>
+<Kind> Health </Kind>
+<Amount> 2343.0 </Amount>
+<Company> iuyg </Company>
+<Country> jhg </Country>
+<City> iuyg </City>
+<Street> iuyg </Street>
+<Number> 32 </Number>
+
 <ReceiptID> 1 </ReceiptID>
-<Date> 25/2/2014 </Date>
+<Date> 1/12/2022 </Date>
+<Kind> Health </Kind>
+<Amount> 123.0 </Amount>
+<Company> iuytgf </Company>
+<Country> iugv </Country>
+<City> iuytgf </City>
+<Street> oiuyg </Street>
+<Number> 21 </Number>
+
+<ReceiptID> 2 </ReceiptID>
+<Date> 14/12/2022 </Date>
 <Kind> Other </Kind>
-<Amount> 2000.0 </Amount>
-<Company> Ioannina </Company>
-<Country> Greece </Country>
-<City> Ioannina </City>
-<Street> Kaloudi </Street>
-<Number> 4 </Number>
+<Amount> 24324.0 </Amount>
+<Company> vsad </Company>
+<Country> erg </Country>
+<City> vsad </City>
+<Street> awe </Street>
+<Number> 32 </Number>
+
+<ReceiptID> 3 </ReceiptID>
+<Date> 9/12/2022 </Date>
+<Kind> Entertainment </Kind>
+<Amount> 234.0 </Amount>
+<Company> dcser </Company>
+<Country> sdf </Country>
+<City> dcser </City>
+<Street> wtg </Street>
+<Number> 12 </Number>
+
+<ReceiptID> 4 </ReceiptID>
+<Date> 9/12/2022 </Date>
+<Kind> Entertainment </Kind>
+<Amount> 30000.0 </Amount>
+<Company> Wakanda </Company>
+<Country> Africa </Country>
+<City> Wakanda </City>
+<Street> Wotuh St </Street>
+<Number> 404 </Number>
 

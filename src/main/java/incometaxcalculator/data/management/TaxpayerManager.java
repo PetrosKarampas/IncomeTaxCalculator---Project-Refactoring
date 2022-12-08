@@ -140,7 +140,6 @@ public class TaxpayerManager {
 
   public boolean containsReceipt(int id) {
     return receiptOwnerTRNHashMap.containsKey(id);
-
   }
 
   public Taxpayer getTaxpayer(int taxRegistrationNumber) {

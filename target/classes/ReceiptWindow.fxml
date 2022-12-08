@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
@@ -30,7 +31,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Group layoutX="50.0" layoutY="41.0" style="-fx-scale-y: 1.05; -fx-scale-x: 1.05;">
+                  <Group layoutX="50.0" layoutY="41.0" style="-fx-scale-y: 1; -fx-scale-x: 1;">
                      <children>
                         <Text layoutX="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receipt ID:" textAlignment="CENTER" />
                         <Text layoutX="14.0" layoutY="24.568359375" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" textAlignment="CENTER" />
@@ -43,11 +44,11 @@
                         <Text layoutX="3.0" layoutY="199.568359375" strokeType="OUTSIDE" strokeWidth="0.0" text="Number:" />
                      </children>
                   </Group>
-                  <VBox layoutX="134.0" layoutY="19.0">
+                  <VBox layoutX="132.0" layoutY="23.0" prefHeight="235.0" prefWidth="160.0">
                      <children>
                         <TextField fx:id="receiptId" />
                         <DatePicker fx:id="date" prefHeight="26.0" prefWidth="160.0" />
-                        <TextField fx:id="kind" />
+                        <ChoiceBox fx:id="kind" prefHeight="25.0" prefWidth="160.0" />
                         <TextField fx:id="amount" />
                         <TextField fx:id="company" />
                         <TextField fx:id="country" />

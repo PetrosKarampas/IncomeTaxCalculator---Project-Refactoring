@@ -1,7 +1,7 @@
-Name: Andrew Tate
+Name: Elon Musk
 AFM: 123456789
 Status: Married Filing Jointly
-Income: 254270.0
+Income: 254299.0
 
 Receipts:
 
@@ -15,6 +15,16 @@ City: Drama
 Street: Fukosima
 Number: 5
 
+Receipt ID: 1
+Date: 9/12/2022
+Kind: Basic
+Amount: 3234.0
+Company: AS
+Country: USA
+City: AS
+Street: DSA
+Number: 23
+
 Receipt ID: 2
 Date: 11/11/2111
 Kind: Other
@@ -24,16 +34,6 @@ Country: werw
 City: ewr
 Street: were
 Number: 4
-
-Receipt ID: 50
-Date: 8/11/2022
-Kind: Entertainment
-Amount: 1999.0
-Company: Ioannina
-Country: Greece
-City: Ioannina
-Street: Smyrnhs
-Number: 15
 
 Receipt ID: 3
 Date: 2/2/2019
@@ -74,4 +74,34 @@ Country: IUHAS
 City: adsj
 Street: iuh
 Number: 43
+
+Receipt ID: 7
+Date: 7/12/2022
+Kind: Basic
+Amount: 567.0
+Company: hjgfv
+Country: ugavsd
+City: hjgfv
+Street: uyjhfg
+Number: 32
+
+Receipt ID: 8
+Date: 25/12/2022
+Kind: Entertainment
+Amount: 234.9
+Company: Thessalonikh
+Country: Greece
+City: Thessalonikh
+Street: Pliatsiko
+Number: 23
+
+Receipt ID: 9
+Date: 22/12/2022
+Kind: Health
+Amount: 234.0
+Company: delopital
+Country: GR
+City: ATH
+Street: df
+Number: 59
 
