@@ -1,7 +1,7 @@
 <Name> Elon Musk </Name>
 <AFM> 123456789 </AFM>
 <Status> Married Filing Jointly </Status>
-<Income> 254299.0 </Income>
+<Income> 25429.0 </Income>
 
 <Receipts>
 
@@ -56,14 +56,14 @@
 <Number> 4 </Number>
 
 <ReceiptID> 5 </ReceiptID>
-<Date> 19/12/2022 </Date>
-<Kind> Health </Kind>
-<Amount> 1500.0 </Amount>
-<Company> Athens </Company>
-<Country> Greece </Country>
-<City> Athens </City>
-<Street> Papandreou </Street>
-<Number> 69 </Number>
+<Date> 20/12/2022 </Date>
+<Kind> Travel </Kind>
+<Amount> 432.0 </Amount>
+<Company> ythgf </Company>
+<Country> uiyg </Country>
+<City> ythgf </City>
+<Street> uytf </Street>
+<Number> 89 </Number>
 
 <ReceiptID> 6 </ReceiptID>
 <Date> 2/11/2022 </Date>

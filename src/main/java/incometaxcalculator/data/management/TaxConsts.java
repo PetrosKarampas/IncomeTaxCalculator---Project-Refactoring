@@ -69,7 +69,7 @@ public class TaxConsts {
 
     public static final float HOH_MULTIPLIER1 = 0.0535f;
     public static final float HOH_MULTIPLIER2 = 0.0705f;
-    public static final float HOH_MULTIPLIER3 = 0.0785f;
+    public static final float HOH_MULTIPLIER3 = 0.0705f;
     public static final float HOH_MULTIPLIER4 = 0.0785f;
     public static final float HOH_MULTIPLIER5 = 0.0985f;
 

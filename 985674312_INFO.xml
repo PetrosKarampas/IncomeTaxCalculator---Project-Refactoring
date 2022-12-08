@@ -1,7 +1,7 @@
-<Name> Nikos Zisis </Name>
-<AFM> 130456094 </AFM>
-<Status> Single </Status>
-<Income> 434567.0 </Income>
+<Name> Monkey D. Luffy </Name>
+<AFM> 985674312 </AFM>
+<Status> Head of Household </Status>
+<Income> 556700.0 </Income>
 
 <Receipts>
 
@@ -36,22 +36,32 @@
 <Number> 32 </Number>
 
 <ReceiptID> 3 </ReceiptID>
-<Date> 9/12/2022 </Date>
+<Date> 14/12/2022 </Date>
 <Kind> Entertainment </Kind>
-<Amount> 234.0 </Amount>
-<Company> dcser </Company>
-<Country> sdf </Country>
-<City> dcser </City>
-<Street> wtg </Street>
-<Number> 12 </Number>
+<Amount> 2133.0 </Amount>
+<Company> Athens </Company>
+<Country> Greece </Country>
+<City> Athens </City>
+<Street> Marko </Street>
+<Number> 4 </Number>
 
 <ReceiptID> 4 </ReceiptID>
-<Date> 9/12/2022 </Date>
-<Kind> Entertainment </Kind>
-<Amount> 30000.0 </Amount>
-<Company> Wakanda </Company>
-<Country> Africa </Country>
-<City> Wakanda </City>
-<Street> Wotuh St </Street>
-<Number> 404 </Number>
+<Date> 22/12/2022 </Date>
+<Kind> Travel </Kind>
+<Amount> 567.0 </Amount>
+<Company> HGH </Company>
+<Country> YHGVHB </Country>
+<City> HGH </City>
+<Street> JHJ </Street>
+<Number> 43 </Number>
+
+<ReceiptID> 5 </ReceiptID>
+<Date> 1/12/2022 </Date>
+<Kind> Health </Kind>
+<Amount> 45678.0 </Amount>
+<Company> NY </Company>
+<Country> USA </Country>
+<City> NY </City>
+<Street> blvd </Street>
+<Number> 78 </Number>
 

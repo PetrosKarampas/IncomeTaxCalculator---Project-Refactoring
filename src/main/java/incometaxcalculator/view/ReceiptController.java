@@ -33,7 +33,7 @@ public class ReceiptController implements Initializable{
 
     private int taxRegistrationNumber;
     private final TaxpayerDataController taxpayerDataController;
-    private final TaxpayerManager manager = new TaxpayerManager();
+    private final TaxpayerManager taxpayerManager = new TaxpayerManager();
 
     public ReceiptController(TaxpayerDataController controller) {
         taxpayerDataController = controller;
@@ -45,8 +45,8 @@ public class ReceiptController implements Initializable{
 
         int id = Integer.parseInt(receiptId.getText());
 
-        if (!manager.containsReceipt(id)) {
-            manager.addReceipt(Integer.parseInt(receiptId.getText()),
+        if (!taxpayerManager.containsReceipt(id)) {
+            taxpayerManager.addReceipt(Integer.parseInt(receiptId.getText()),
                     correctDate,
                     Float.parseFloat(amount.getText()),
                     receiptKind,

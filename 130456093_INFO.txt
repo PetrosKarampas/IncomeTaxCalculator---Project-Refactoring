@@ -1,4 +1,4 @@
-Name: Apostolos Zarras
+Name: Thrasos Koutroumpas
 AFM: 130456093
 Status: Married Filing Jointly
 Income: 225767.0
@@ -15,6 +15,16 @@ City: BlazeIt
 Street: LegalizeIt
 Number: 420
 
+Receipt ID: 32
+Date: 22/12/2022
+Kind: Basic
+Amount: 2345.0
+Company: CornHub.com
+Country: USA
+City: DatCity
+Street: corn
+Number: 12
+
 Receipt ID: 1
 Date: 25/2/2014
 Kind: Basic
@@ -24,14 +34,4 @@ Country: Greece
 City: Ioannina
 Street: Kaloudi
 Number: 10
-
-Receipt ID: 3
-Date: 10/3/2014
-Kind: Health
-Amount: 500.0
-Company: Dentist
-Country: Greece
-City: Ioannina
-Street: Lamprou
-Number: 20
 
