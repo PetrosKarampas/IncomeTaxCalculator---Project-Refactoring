@@ -77,7 +77,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    void selectTaxpayer(MouseEvent event) throws IOException {
+    void selectTaxpayer(MouseEvent event) throws IOException, WrongTaxpayerStatusException {
         int trn = taxpayerList.getSelectionModel().getSelectedItem();
         String fullName = taxpayerManager.getTaxpayerFullName(trn);
         String status = taxpayerManager.getTaxpayerStatus(trn);

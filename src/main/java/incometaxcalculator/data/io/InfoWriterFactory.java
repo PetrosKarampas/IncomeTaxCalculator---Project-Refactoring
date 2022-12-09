@@ -1,11 +1,5 @@
 package incometaxcalculator.data.io;
 
-import incometaxcalculator.data.io.FileWriter;
-import incometaxcalculator.data.io.TXTInfoWriter;
-import incometaxcalculator.data.io.XMLInfoWriter;
-
-import java.io.Writer;
-
 public class InfoWriterFactory {
 
     public InfoWriterFactory() {}

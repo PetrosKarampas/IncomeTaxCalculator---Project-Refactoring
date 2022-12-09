@@ -5,6 +5,7 @@ import incometaxcalculator.data.management.TaxpayerManager;
 import incometaxcalculator.exceptions.ReceiptIdDoesNotExistException;
 import incometaxcalculator.exceptions.WrongFileFormatException;
 import incometaxcalculator.exceptions.WrongReceiptDateException;
+import incometaxcalculator.exceptions.WrongTaxpayerStatusException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -72,17 +73,17 @@ public class TaxpayerDataController implements Initializable{
     }
 
     @FXML
-    private void saveAsTXT() throws WrongFileFormatException, IOException {
+    private void saveAsTXT() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException {
         taxpayerManager.saveLogFile(trnText, "_LOG.txt");
     }
 
     @FXML
-    private void saveAsXML() throws WrongFileFormatException, IOException {
+    private void saveAsXML() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException {
         taxpayerManager.saveLogFile(trnText, "_LOG.xml");
     }
 
     @FXML
-    void removeReceipt(ActionEvent event) throws WrongFileFormatException, IOException, ReceiptIdDoesNotExistException {
+    void removeReceipt(ActionEvent event) throws WrongFileFormatException, IOException, ReceiptIdDoesNotExistException, WrongTaxpayerStatusException {
         int selectedReceipt = receiptList.getSelectionModel().getSelectedItem();
         int selectedReceiptIndex = receiptList.getSelectionModel().getSelectedIndex();
 
@@ -150,7 +151,7 @@ public class TaxpayerDataController implements Initializable{
     }
 
     @FXML
-    public void updateTaxpayerData() throws WrongFileFormatException, IOException {
+    public void updateTaxpayerData() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException {
         System.out.println(this.fullName.getText() + " \n" + this.income.getText());
         taxpayerManager.getTaxpayer(trnText).setIncome(Float.parseFloat(this.income.getText()));
         taxpayerManager.getTaxpayer(trnText).setFullName(this.fullName.getText());

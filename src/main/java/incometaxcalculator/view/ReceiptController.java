@@ -4,6 +4,7 @@ import incometaxcalculator.data.management.*;
 import incometaxcalculator.exceptions.ReceiptAlreadyExistsException;
 import incometaxcalculator.exceptions.WrongFileFormatException;
 import incometaxcalculator.exceptions.WrongReceiptDateException;
+import incometaxcalculator.exceptions.WrongTaxpayerStatusException;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,7 +40,7 @@ public class ReceiptController implements Initializable{
         taxpayerDataController = controller;
     }
 
-    @FXML public void submitReceipt() throws WrongFileFormatException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException {
+    @FXML public void submitReceipt() throws WrongFileFormatException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongTaxpayerStatusException {
         LocalDate localDate = date.getValue();
         String correctDate = localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 

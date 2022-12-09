@@ -1,7 +1,7 @@
-Name: Elon Musk
+Name: Mpampis Mpampouras
 AFM: 123456789
 Status: Married Filing Jointly
-Income: 25429.0
+Income: 254658.0
 
 Receipts:
 
@@ -46,14 +46,14 @@ Street: sdfs
 Number: 1
 
 Receipt ID: 4
-Date: 11/12/2021
-Kind: Travel
-Amount: 4535.0
-Company: wer
-Country: wer
-City: wer
-Street: wer
-Number: 4
+Date: 22/12/2022
+Kind: Health
+Amount: 4567.0
+Company: jgdbeafjhewdasxkj
+Country: fgkiug
+City: gkj
+Street: hhg
+Number: 67
 
 Receipt ID: 5
 Date: 20/12/2022

@@ -1,11 +1,6 @@
 package incometaxcalculator.data.io;
 
-import incometaxcalculator.data.io.FileWriter;
-import incometaxcalculator.data.io.TXTLogWriter;
-import incometaxcalculator.data.io.XMLLogWriter;
 import incometaxcalculator.exceptions.WrongFileFormatException;
-
-import java.io.Writer;
 
 public class LogWriterFactory {
 

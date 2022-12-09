@@ -10,8 +10,7 @@ public class Receipt {
   private final String kind;
   private final Company company;
 
-  public Receipt(int id, String issueDate, float amount, String kind, Company company) throws WrongReceiptDateException
-  {
+  public Receipt(int id, String issueDate, float amount, String kind, Company company) throws WrongReceiptDateException {
     this.id = id;
     this.issueDate = createDate(issueDate);
     this.amount = amount;
@@ -19,11 +18,12 @@ public class Receipt {
     this.company = company;
   }
 
-  private Date createDate(String issueDate) throws WrongReceiptDateException {
+  private Date createDate(String issueDate) throws WrongReceiptDateException
+  {
     String[] token = issueDate.split("/");
-    if (token.length != 3) {
+    if (token.length != 3)
       throw new WrongReceiptDateException();
-    }
+
     int day = Integer.parseInt(token[0]);
     int month = Integer.parseInt(token[1]);
     int year = Integer.parseInt(token[2]);
@@ -43,5 +43,6 @@ public class Receipt {
   public Company getCompany() {
     return company;
   }
+
 
 }

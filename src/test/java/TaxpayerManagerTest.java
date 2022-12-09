@@ -1,3 +1,5 @@
+package incometaxcalculator.test;
+
 import incometaxcalculator.data.management.TaxpayerManager;
 import incometaxcalculator.exceptions.*;
 
@@ -5,9 +7,12 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
-class TaxpayerManagerTest {
+public class TaxpayerManagerTest
+{
     TaxpayerManager taxpayerManager = new TaxpayerManager();
     Path txtFilepath = Paths.get(System.getProperty("user.dir")+"/123456789_INFO.txt");
     Path xmlFilePath = Paths.get(System.getProperty("user.dir")+"/123456789_INFO.txt");
@@ -16,26 +21,24 @@ class TaxpayerManagerTest {
     Path xmlFileName = xmlFilePath.getFileName();
     Path xlsxFileName = xlsxFilePath.getFileName();
 
-    @org.junit.jupiter.api.Test
-    void loadTaxpayerTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    @Test
+    public void loadTaxpayerTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
-        // loadTaxpayerTest from txt file
-        assertTrue(taxpayerManager.loadTaxpayer(String.valueOf(txtFileName)));
+        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
+        assertTrue(taxpayerManager.containsTaxpayer(123456789));
 
     }
 
-    @org.junit.jupiter.api.Test
-    void loadTaxpayerTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    @Test
+    public void loadTaxpayerTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
-        //loadTaxpayerTest from xml file
-        assertTrue(taxpayerManager.loadTaxpayer(String.valueOf(xmlFileName)));
-
+        taxpayerManager.loadTaxpayer(String.valueOf(xmlFileName));
+        assertTrue(taxpayerManager.containsTaxpayer(123456789));
     }
 
-    @org.junit.jupiter.api.Test
-    void loadTaxpayerTest3()
+    @Test
+    public void loadTaxpayerTest3() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
-        //WrongFileExtensionException Test
         assertThrows
                 (
                         WrongFileFormatException.class,
@@ -43,91 +46,87 @@ class TaxpayerManagerTest {
                 );
     }
 
-    @org.junit.jupiter.api.Test
-    void removeTaxpayerTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException, WrongTaxRegistrationNumberException {
-        //Remove existing taxpayer
-        boolean loadTaxpayerFromTXTFile = taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
+   @Test
+   public void removeTaxpayerTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException, WrongTaxRegistrationNumberException
+    {
+        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         taxpayerManager.removeTaxpayer(123456789);
-        assertFalse(TaxpayerManager.getTaxpayerHashMap().containsKey(123456789));
-
+        assertFalse(taxpayerManager.containsTaxpayer(123456789));
     }
 
-    @org.junit.jupiter.api.Test
-    void removeTaxpayerTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    @Test
+    public void removeTaxpayerTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
-        //WrongTaxRegistrationNumberException test
-        boolean loadTaxpayerFromTXTFile = taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
+        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         assertThrows(
                 WrongTaxRegistrationNumberException.class,
                 () -> taxpayerManager.removeTaxpayer(999999999)
                     );
     }
 
-     @org.junit.jupiter.api.Test
-   void addReceiptTest1() throws WrongReceiptKindException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongFileFormatException, WrongTaxpayerStatusException
+    @Test
+    public void addReceiptTest1() throws WrongReceiptKindException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongFileFormatException, WrongTaxpayerStatusException
     {
-        // Add non-existing receipt
-        boolean loadTaxpayerFromTXTFile = taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
-        assertTrue(taxpayerManager.addReceipt
+        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
+        taxpayerManager.addReceipt
                 (
-                        50, "8/11/2022", 1999, "Entertainment", "TEST",
+                        100, "8/11/2022", 1999, "Entertainment", "TEST",
                         "Greece", "Ioannina", "Smyrnhs", 15, 123456789
-                ));
+                );
+        assertTrue(taxpayerManager.containsReceipt(100));
     }
 
-    @org.junit.jupiter.api.Test
-    void addReceiptTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    @Test
+    public void addReceiptTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
-        // ReceiptAlreadyExistsException Test
-        boolean loadTaxpayerFromTXTFile = taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
+       taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         assertThrows(
                 ReceiptAlreadyExistsException.class,
                 () -> taxpayerManager.addReceipt
                         (
-                                20, "8/11/2022", 1999, "Basic", "TEST",
+                                100, "8/11/2022", 1999, "Basic", "TEST",
                                 "Greece", "Ioannina", "Smyrnhs", 15, 123456789
                         ));
     }
 
-     @org.junit.jupiter.api.Test
-    void removeReceiptTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException, ReceiptIdDoesNotExistException
-    {
-        // Remove existing receipt
-        boolean loadTaxpayerFromTXTFile = taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
-        taxpayerManager.removeReceipt(20);
-        assertFalse(taxpayerManager.isTaxpayerHashMapContainsReceiptID(20));
+     @Test
+     public void removeReceiptTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException {
+        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
+        taxpayerManager.removeReceipt(100);
+        assertFalse(taxpayerManager.containsReceipt(100));
     }
 
-    @org.junit.jupiter.api.Test
-    void removeReceiptTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    @Test
+    public void removeReceiptTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
-        // Remove existing receipt
-        boolean loadTaxpayerFromTXTFile = taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
-        assertThrows(
-                ReceiptIdDoesNotExistException.class,
+        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
+        assertThrows
+        (
+                WrongReceiptKindException.class,
                 () -> taxpayerManager.removeReceipt(9999)
         );
     }
 
-    @org.junit.jupiter.api.Test
-    void saveLogFileTest1() throws WrongFileFormatException, IOException, WrongReceiptKindException, WrongTaxpayerStatusException, WrongReceiptDateException {
-        taxpayerManager.loadTaxpayer("123456789_INFO.txt");
+   /* @org.junit.jupiter.api.Test
+    void saveLogFileTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException
+    {
         assertTrue(taxpayerManager.saveLogFile(123456789, "_LOG.txt"));
     }
 
     @org.junit.jupiter.api.Test
-    void saveLogFileTest2() throws WrongFileFormatException, IOException, WrongReceiptKindException, WrongTaxpayerStatusException, WrongReceiptDateException {
-        taxpayerManager.loadTaxpayer("123456789_INFO.xml");
+    void saveLogFileTest2() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException
+    {
         assertTrue(taxpayerManager.saveLogFile(123456789, "_LOG.xml"));
     }
 
     @org.junit.jupiter.api.Test
     void saveLogFileTest3()
     {
-        assertThrows(
+        assertThrows
+        (
                 WrongFileFormatException.class,
                 () -> taxpayerManager.saveLogFile(123456789, "_LOG.xlsx")
         );
     }
-
+    */
 }
