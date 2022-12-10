@@ -2,25 +2,21 @@ package incometaxcalculator.data.management;
 
 public class SingleTaxpayer extends Taxpayer
 {
+
+  private final double[] limitIncomesForSingleTaxpayer = {24680.0, 81080.0, 90000.0, 152540.0, Double.MAX_VALUE};
+  private final double[] incomeDecreaseForSingleTaxpayer = {0, 24680.0, 81080.0, 90000.0, 152540.0};
+  private final double[] taxPercentagesForSingleTaxpayer = {0.0535, 0.0705, 0.0785, 0.0785, 0.0985};
+  private final double[] constantsForSingleTaxpayer = {1.0, 1320.38, 5296.58, 5996.8, 10906.19};
+
   public SingleTaxpayer(String fullName, int taxRegistrationNumber, float income)
   {
     super(fullName, taxRegistrationNumber, income);
   }
+
   @Override
   public double calculateBasicTax()
   {
-    for(int i=0; i<limitIncomesForSingleTaxpayer.length; i++)
-    {
-      if(income < limitIncomesForSingleTaxpayer[i] && i == 0)
-        return  taxPercentagesForSingleTaxpayer[0] * income;
-      else if(income < limitIncomesForSingleTaxpayer[i])
-        return getBasicTax(i);
-    }
-    return -1;
+    return calculateBasicTax(limitIncomesForSingleTaxpayer, incomeDecreaseForSingleTaxpayer, taxPercentagesForSingleTaxpayer, constantsForSingleTaxpayer);
   }
-  @Override
-  public double getBasicTax(int index)
-  {
-    return constantsForSingleTaxpayer[index] + (taxPercentagesForSingleTaxpayer[index]*(income - limitIncomesForSingleTaxpayer[index -1]));
-  }
+
 }
