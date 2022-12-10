@@ -4,20 +4,19 @@ public class MarriedFilingSeparatelyTaxpayer extends Taxpayer
 {
   public MarriedFilingSeparatelyTaxpayer(String fullName, int taxRegistrationNumber, float income)
   {
-
     super(fullName, taxRegistrationNumber, income);
   }
   @Override
   public double calculateBasicTax()
   {
-    for(int i=0; i<limitIncomesForMFSTaxpayer.length; i++)
-    {
-      if(income < limitIncomesForMFSTaxpayer[i] && i == 0)
-        return  taxPercentagesForMFSTaxpayer[0] * income;
-      else if(income < limitIncomesForMFSTaxpayer[i])
-        return getBasicTax(i);
+    double basicTax = 0f;
+    for (int i = 0; i < limitIncomesForMFSTaxpayer.length; i++) {
+      if (income < limitIncomesForMFSTaxpayer[i]) {
+        basicTax = constantsForMFSTaxpayer[i] + taxPercentagesForMFSTaxpayer[i] * (income - incomeDecrease[i]);
+        break;
       }
-    return -1;
+    }
+    return basicTax;
 
   }
 

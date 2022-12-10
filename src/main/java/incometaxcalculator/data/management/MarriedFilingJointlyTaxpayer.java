@@ -2,6 +2,8 @@ package incometaxcalculator.data.management;
 
 public class MarriedFilingJointlyTaxpayer extends Taxpayer
 {
+
+
   public MarriedFilingJointlyTaxpayer(String fullName, int taxRegistrationNumber, float income)
   {
     super(fullName, taxRegistrationNumber, income);
@@ -9,14 +11,14 @@ public class MarriedFilingJointlyTaxpayer extends Taxpayer
   @Override
   public double calculateBasicTax()
   {
-    for(int i = 0; i < limitIncomesForMFJTaxpayer.length; i++)
-    {
-      if(income < limitIncomesForMFJTaxpayer[i] && i == 0)
-        return taxPercentagesForMFJTaxpayer[0] * income;
-      else if(income < limitIncomesForMFJTaxpayer[i])
-        return getBasicTax(i);
+    double basicTax = 0f;
+    for (int i = 0; i < limitIncomesForMFJTaxpayer.length; i++) {
+      if (income < limitIncomesForMFJTaxpayer[i]) {
+        basicTax = constantsForMFJTaxpayer[i] + taxPercentagesForMFJTaxpayer[i] * (income - incomeDecrease[i]);
+        break;
+      }
     }
-    return -1;
+    return basicTax;
   }
   @Override
   public double getBasicTax(int index)
