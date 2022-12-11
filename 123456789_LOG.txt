@@ -1,0 +1,12 @@
+Name: Mpampis Mpampouras
+AFM: 123456789
+Income: 254658.0
+Basic Tax: 18238.862999999998
+Tax Increase: 1459.1090399999998
+Total Tax: 19697.972039999997
+TotalReceiptsGathered: 10
+Entertainment: 234.89999389648438
+Basic: 4086.0
+Travel: 532.0
+Health: 4801.0
+Other: 1000.0

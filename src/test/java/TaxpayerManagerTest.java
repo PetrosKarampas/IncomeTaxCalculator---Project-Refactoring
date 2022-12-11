@@ -1,5 +1,3 @@
-package incometaxcalculator.test;
-
 import incometaxcalculator.data.management.TaxpayerManager;
 import incometaxcalculator.exceptions.*;
 import java.io.BufferedReader;
@@ -20,7 +18,7 @@ public class TaxpayerManagerTest
     Path xmlFileName = xmlFilePath.getFileName();
 
     @Test
-    public void loadTaxpayerTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    public void loadTaxpayerTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         assertTrue(taxpayerManager.containsTaxpayer(123456789));
@@ -28,14 +26,14 @@ public class TaxpayerManagerTest
     }
 
     @Test
-    public void loadTaxpayerTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    public void loadTaxpayerTest2() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
         taxpayerManager.loadTaxpayer(String.valueOf(xmlFileName));
         assertTrue(taxpayerManager.containsTaxpayer(123456789));
     }
 
    @Test
-   public void removeTaxpayerTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException, WrongTaxRegistrationNumberException
+   public void removeTaxpayerTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException, WrongTaxRegistrationNumberException
     {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         taxpayerManager.removeTaxpayer(123456789);
@@ -43,7 +41,7 @@ public class TaxpayerManagerTest
     }
 
     @Test
-    public void removeTaxpayerTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    public void removeTaxpayerTest2() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         assertThrows(
@@ -53,7 +51,7 @@ public class TaxpayerManagerTest
     }
 
     @Test
-    public void addReceiptTest1() throws WrongReceiptKindException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongFileFormatException, WrongTaxpayerStatusException
+    public void addReceiptTest1() throws IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongFileFormatException, WrongTaxpayerStatusException
     {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         taxpayerManager.addReceipt
@@ -65,7 +63,7 @@ public class TaxpayerManagerTest
     }
 
     @Test
-    public void addReceiptTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    public void addReceiptTest2() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         assertThrows(
@@ -78,29 +76,19 @@ public class TaxpayerManagerTest
     }
 
      @Test
-     public void removeReceiptTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException, WrongReceiptIDException
+     public void removeReceiptTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
      {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
-        taxpayerManager.removeReceipt(12);
-        assertFalse(taxpayerManager.containsReceipt(12));
+        taxpayerManager.removeReceipt(9);
+        assertFalse(taxpayerManager.containsReceipt(9));
     }
 
     @Test
-    public void removeReceiptTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
-    {
-        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
-        assertThrows(
-                WrongReceiptIDException.class,
-                () -> taxpayerManager.removeReceipt(9999)
-        );
-    }
-
-    @Test
-    public void saveLogFileTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptKindException, WrongReceiptDateException
+    public void saveLogFileTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         taxpayerManager.saveLogFile(123456789, "_LOG.txt");
-        String expected = " Apostolos Zarras,  123456789,  260000.0,  18765.05,  1501.204,  20266.254,  6,  0.0,  8784.0,  100.0,  0.0,  1000.0";
+        String expected = " Mpampis Mpampouras,  123456789,  254658.0,  18238.862999999998,  1459.1090399999998,  19697.972039999997,  10,  234.89999389648438,  4086.0,  532.0,  4801.0,  1000.0";
         Path txtLogFilePath = Paths.get(System.getProperty("user.dir")+"/123456789_LOG.txt");
         BufferedReader br = new BufferedReader(new FileReader(txtLogFilePath.toFile()));
         String line;

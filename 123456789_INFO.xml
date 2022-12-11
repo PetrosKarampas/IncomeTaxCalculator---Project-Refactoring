@@ -1,7 +1,7 @@
 <Name> Mpampis Mpampouras </Name>
 <AFM> 123456789 </AFM>
 <Status> Married Filing Jointly </Status>
-<Income> 2.5465808E7 </Income>
+<Income> 254658.0 </Income>
 
 <Receipts>
 
@@ -94,14 +94,4 @@
 <City> Thessalonikh </City>
 <Street> Pliatsiko </Street>
 <Number> 23 </Number>
-
-<ReceiptID> 9 </ReceiptID>
-<Date> 22/12/2022 </Date>
-<Kind> Health </Kind>
-<Amount> 234.0 </Amount>
-<Company> ATH </Company>
-<Country> GR </Country>
-<City> ATH </City>
-<Street> df </Street>
-<Number> 59 </Number>
 
