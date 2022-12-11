@@ -6,8 +6,8 @@ import java.util.HashMap;
 import incometaxcalculator.data.io.*;
 import incometaxcalculator.exceptions.*;
 
-public class TaxpayerManager {
-
+public class TaxpayerManager
+{
   private static final HashMap<Integer, Taxpayer> taxpayerHashMap = new HashMap<>(0);
   private static final HashMap<Integer, Integer> receiptOwnerTRNHashMap = new HashMap<>(0);
 
@@ -51,7 +51,7 @@ public class TaxpayerManager {
           int receiptId, String issueDate, float amount, String kind, String companyName,
           String country, String city, String street, int number, int taxRegistrationNumber
           )
-          throws IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongFileFormatException, WrongTaxpayerStatusException
+          throws IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongTaxpayerStatusException
   {
     if (containsReceipt(receiptId))
       throw new ReceiptAlreadyExistsException();
@@ -59,16 +59,14 @@ public class TaxpayerManager {
     updateFiles(taxRegistrationNumber);
   }
 
-  public void removeReceipt(int receiptId) throws IOException, WrongFileFormatException, WrongTaxpayerStatusException
+  public void removeReceipt(int receiptId) throws IOException, WrongTaxpayerStatusException
   {
-
       taxpayerHashMap.get(receiptOwnerTRNHashMap.get(receiptId)).removeReceiptFromTaxpayerHashMap(receiptId);
       updateFiles(receiptOwnerTRNHashMap.get(receiptId));
       receiptOwnerTRNHashMap.remove(receiptId);
-
   }
 
-  public void updateFiles(int taxRegistrationNumber) throws IOException, WrongFileFormatException, WrongTaxpayerStatusException
+  public void updateFiles(int taxRegistrationNumber) throws IOException, WrongTaxpayerStatusException
   {
     FileFactory fileFactory = new FileFactory();
     FileWriterFactory fileWriterFactory = new FileWriterFactory();
@@ -90,7 +88,7 @@ public class TaxpayerManager {
       throw new IOException();
   }
 
-  public void saveLogFile(int taxRegistrationNumber, String fileFormat) throws IOException, WrongFileFormatException, WrongTaxpayerStatusException
+  public void saveLogFile(int taxRegistrationNumber, String fileFormat) throws IOException, WrongTaxpayerStatusException
   {
     FileWriterFactory fileWriterFactory = new FileWriterFactory();
     FileWriterInterface fileWriter = fileWriterFactory.createFileWriter(fileFormat);
@@ -98,8 +96,8 @@ public class TaxpayerManager {
   }
 
   public void loadTaxpayer(String fileName)
-          throws NumberFormatException, IOException, WrongFileFormatException,
-          WrongTaxpayerStatusException, WrongReceiptKindException, WrongReceiptDateException
+          throws NumberFormatException, IOException,
+          WrongTaxpayerStatusException, WrongReceiptDateException, WrongFileFormatException
   {
     FileReaderFactory fileReaderFactory = new FileReaderFactory();
     String[] fileNameValues = fileName.split("\\.");

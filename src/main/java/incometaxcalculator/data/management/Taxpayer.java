@@ -3,12 +3,6 @@ import java.util.HashMap;
 
 public abstract class Taxpayer
 {
-
-
-
-
-
-
   private String fullName;
   private final int taxRegistrationNumber;
   private final double[] receiptsAmountPerKind = new double[5];
@@ -18,7 +12,8 @@ public abstract class Taxpayer
   private final HashMap<Integer, Receipt> receiptHashMap = new HashMap<>(0);
   private final HashMap<String, Integer> receiptKindAndIndexHashMap = new HashMap<>();
 
-  public double calculateBasicTax(double[] incomeLimits, double[] incomeDecrease, double[]taxPercentages, double[] constants) {
+  public double calculateBasicTax(double[] incomeLimits, double[] incomeDecrease, double[]taxPercentages, double[] constants)
+  {
     double basicTax = 0f;
     for (int i = 0; i < incomeLimits.length; i++) {
       if (income < incomeLimits[i]) {

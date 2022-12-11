@@ -2,13 +2,13 @@ package incometaxcalculator.test;
 
 import incometaxcalculator.data.management.TaxpayerManager;
 import incometaxcalculator.exceptions.*;
-
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
+import java.util.ArrayList;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class TaxpayerManagerTest
@@ -16,10 +16,8 @@ public class TaxpayerManagerTest
     TaxpayerManager taxpayerManager = new TaxpayerManager();
     Path txtFilepath = Paths.get(System.getProperty("user.dir")+"/123456789_INFO.txt");
     Path xmlFilePath = Paths.get(System.getProperty("user.dir")+"/123456789_INFO.txt");
-    Path xlsxFilePath = Paths.get(System.getProperty("user.dir")+"123456789_INFO.xlsx");
     Path txtFileName = txtFilepath.getFileName();
     Path xmlFileName = xmlFilePath.getFileName();
-    Path xlsxFileName = xlsxFilePath.getFileName();
 
     @Test
     public void loadTaxpayerTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
@@ -34,16 +32,6 @@ public class TaxpayerManagerTest
     {
         taxpayerManager.loadTaxpayer(String.valueOf(xmlFileName));
         assertTrue(taxpayerManager.containsTaxpayer(123456789));
-    }
-
-    @Test
-    public void loadTaxpayerTest3() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
-    {
-        assertThrows
-                (
-                        WrongFileFormatException.class,
-                        () -> taxpayerManager.loadTaxpayer(String.valueOf(xlsxFileName))
-                );
     }
 
    @Test
@@ -90,43 +78,39 @@ public class TaxpayerManagerTest
     }
 
      @Test
-     public void removeReceiptTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException {
+     public void removeReceiptTest1() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException, WrongReceiptIDException
+     {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
-        taxpayerManager.removeReceipt(100);
-        assertFalse(taxpayerManager.containsReceipt(100));
+        taxpayerManager.removeReceipt(12);
+        assertFalse(taxpayerManager.containsReceipt(12));
     }
 
     @Test
     public void removeReceiptTest2() throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
-        assertThrows
-        (
-                WrongReceiptKindException.class,
+        assertThrows(
+                WrongReceiptIDException.class,
                 () -> taxpayerManager.removeReceipt(9999)
         );
     }
 
-   /* @org.junit.jupiter.api.Test
-    void saveLogFileTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException
+    @Test
+    public void saveLogFileTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptKindException, WrongReceiptDateException
     {
-        assertTrue(taxpayerManager.saveLogFile(123456789, "_LOG.txt"));
+        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
+        taxpayerManager.saveLogFile(123456789, "_LOG.txt");
+        String expected = " Apostolos Zarras,  123456789,  260000.0,  18765.05,  1501.204,  20266.254,  6,  0.0,  8784.0,  100.0,  0.0,  1000.0";
+        Path txtLogFilePath = Paths.get(System.getProperty("user.dir")+"/123456789_LOG.txt");
+        BufferedReader br = new BufferedReader(new FileReader(txtLogFilePath.toFile()));
+        String line;
+        ArrayList<String> contents = new ArrayList<>();
+        while((line = br.readLine()) != null)
+        {
+            String[] value = line.split(":");
+            contents.add(value[1]);
+        }
+        String actual = String.join(", ", contents);
+        assertEquals(expected, actual);
     }
-
-    @org.junit.jupiter.api.Test
-    void saveLogFileTest2() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException
-    {
-        assertTrue(taxpayerManager.saveLogFile(123456789, "_LOG.xml"));
-    }
-
-    @org.junit.jupiter.api.Test
-    void saveLogFileTest3()
-    {
-        assertThrows
-        (
-                WrongFileFormatException.class,
-                () -> taxpayerManager.saveLogFile(123456789, "_LOG.xlsx")
-        );
-    }
-    */
 }
