@@ -26,8 +26,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-public class TaxpayerDataController implements Initializable{
-
+public class TaxpayerDataController implements Initializable
+{
     @FXML private Button updateBtn;
     @FXML private Button removeReceiptBtn;
     @FXML private TextField fullName;
@@ -42,7 +42,8 @@ public class TaxpayerDataController implements Initializable{
     private final String fullNameText;
     private final int trnText;
 
-    public TaxpayerDataController(String fullName, String income, String status, int trn) {
+    public TaxpayerDataController(String fullName, String income, String status, int trn)
+    {
         fullNameText = fullName;
         incomeText = income;
         statusText = status;
@@ -50,7 +51,8 @@ public class TaxpayerDataController implements Initializable{
     }
 
     @FXML
-    void addReceipt(ActionEvent event) throws WrongReceiptDateException, IOException {
+    void addReceipt(ActionEvent event) throws WrongReceiptDateException, IOException
+    {
         ReceiptController newReceipt = new ReceiptController(this);
         newReceipt.setTaxRegistrationNumber(this.trnText);
 
@@ -73,17 +75,20 @@ public class TaxpayerDataController implements Initializable{
     }
 
     @FXML
-    private void saveAsTXT() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException {
+    private void saveAsTXT() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException
+    {
         taxpayerManager.saveLogFile(trnText, "_LOG.txt");
     }
 
     @FXML
-    private void saveAsXML() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException {
+    private void saveAsXML() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException
+    {
         taxpayerManager.saveLogFile(trnText, "_LOG.xml");
     }
 
     @FXML
-    void removeReceipt(ActionEvent event) throws WrongFileFormatException, IOException, ReceiptIdDoesNotExistException, WrongTaxpayerStatusException {
+    void removeReceipt(ActionEvent event) throws WrongFileFormatException, IOException, ReceiptIdDoesNotExistException, WrongTaxpayerStatusException
+    {
         int selectedReceipt = receiptList.getSelectionModel().getSelectedItem();
         int selectedReceiptIndex = receiptList.getSelectionModel().getSelectedIndex();
 
@@ -92,7 +97,8 @@ public class TaxpayerDataController implements Initializable{
     }
 
     @FXML
-    void viewChartReport(ActionEvent event) throws IOException {
+    void viewChartReport(ActionEvent event) throws IOException
+    {
         HashMap<Integer, Receipt> receipts = taxpayerManager.getReceiptHashMap(trnText);
 
         /*
@@ -151,7 +157,8 @@ public class TaxpayerDataController implements Initializable{
     }
 
     @FXML
-    public void updateTaxpayerData() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException {
+    public void updateTaxpayerData() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException
+    {
         System.out.println(this.fullName.getText() + " \n" + this.income.getText());
         taxpayerManager.getTaxpayer(trnText).setIncome(Float.parseFloat(this.income.getText()));
         taxpayerManager.getTaxpayer(trnText).setFullName(this.fullName.getText());
@@ -159,7 +166,8 @@ public class TaxpayerDataController implements Initializable{
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
         this.fullName.setText(fullNameText);
         this.status.setText(statusText);
         this.taxRegistrationNumber.setText(String.valueOf(trnText));

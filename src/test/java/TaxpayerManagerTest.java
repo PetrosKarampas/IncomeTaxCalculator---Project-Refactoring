@@ -88,7 +88,7 @@ public class TaxpayerManagerTest
     {
         taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         taxpayerManager.saveLogFile(123456789, "_LOG.txt");
-        String expected = " Mpampis Mpampouras,  123456789,  254658.0,  18238.862999999998,  1459.1090399999998,  19697.972039999997,  10,  234.89999389648438,  4086.0,  532.0,  4801.0,  1000.0";
+        String expected = " Apostolos Zarras,  123456789,  260000.0,  18765.05,  1501.204,  20266.254,  6,  0.0,  8784.0,  100.0,  0.0,  1000.0";
         Path txtLogFilePath = Paths.get(System.getProperty("user.dir")+"/123456789_LOG.txt");
         BufferedReader br = new BufferedReader(new FileReader(txtLogFilePath.toFile()));
         String line;

@@ -21,7 +21,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class MainController implements Initializable
+{
 
     @FXML private Button selectBtn;
     @FXML private Button deleteBtn;
@@ -29,7 +30,8 @@ public class MainController implements Initializable {
     private final TaxpayerManager taxpayerManager = new TaxpayerManager();
 
     @FXML
-    void deleteTaxpayer(MouseEvent event) throws WrongTaxRegistrationNumberException {
+    void deleteTaxpayer(MouseEvent event) throws WrongTaxRegistrationNumberException
+    {
         int removedRegistrationNumber = taxpayerList.getSelectionModel().getSelectedItem();
 
         taxpayerList.getItems().remove(taxpayerList.getSelectionModel().getSelectedItem());
@@ -37,47 +39,55 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    void loadTxtDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException {
+    void loadTxtDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    {
         loadDocument("txt");
     }
 
     @FXML
-    void loadXMLDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException {
+    void loadXMLDocument(ActionEvent event) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    {
         loadDocument("xml");
     }
 
-    private void loadDocument(String fileType) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException {
+    private void loadDocument(String fileType) throws WrongReceiptKindException, WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
+    {
         FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(fileType + " files", "*." + fileType));
         File selected = fc.showOpenDialog(null);
 
-        if(selected != null && selected.getName().contains("INFO")) {
+        if(selected != null && selected.getName().contains("INFO"))
+        {
             String fileName = selected.getName();
             int registrationNumber = Integer.parseInt(selected.getName().substring(0,9));
 
-            if (taxpayerManager.containsTaxpayer(registrationNumber)) {
+            if (taxpayerManager.containsTaxpayer(registrationNumber))
+            {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Loading Error!");
                 alert.setHeaderText("Taxpayer already exists");
                 alert.showAndWait();
             }
-            else {
+            else
+            {
                 taxpayerManager.loadTaxpayer(fileName);
                 taxpayerList.getItems().add(registrationNumber);
             }
-        }else if (selected != null) {
+        }
+        else if (selected != null)
+        {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("File selection error");
             alert.setHeaderText("Please select a compatible file!");
             alert.setContentText("Compatible file format:   (ΑΦΜ)_INFO." + fileType);
             alert.showAndWait();
-        }else {
+        }else
             System.out.println("file selection got canceled!");
-        }
     }
 
     @FXML
-    void selectTaxpayer(MouseEvent event) throws IOException, WrongTaxpayerStatusException {
+    void selectTaxpayer(MouseEvent event) throws IOException, WrongTaxpayerStatusException
+    {
         int trn = taxpayerList.getSelectionModel().getSelectedItem();
         String fullName = taxpayerManager.getTaxpayerFullName(trn);
         String status = taxpayerManager.getTaxpayerStatus(trn);
@@ -99,7 +109,8 @@ public class MainController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
         selectBtn.disableProperty().bind(taxpayerList.getSelectionModel().selectedItemProperty().isNull());
         deleteBtn.disableProperty().bind(taxpayerList.getSelectionModel().selectedItemProperty().isNull());
     }

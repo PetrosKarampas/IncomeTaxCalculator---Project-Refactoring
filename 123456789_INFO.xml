@@ -1,7 +1,7 @@
-<Name> Mpampis Mpampouras </Name>
+<Name> Apostolos Zarras </Name>
 <AFM> 123456789 </AFM>
 <Status> Married Filing Jointly </Status>
-<Income> 254658.0 </Income>
+<Income> 260000.0 </Income>
 
 <Receipts>
 
@@ -9,27 +9,17 @@
 <Date> 10/5/1996 </Date>
 <Kind> Basic </Kind>
 <Amount> 251.0 </Amount>
-<Company> Drama </Company>
+<Company> Parta </Company>
 <Country> Jakusa </Country>
 <City> Drama </City>
 <Street> Fukosima </Street>
 <Number> 5 </Number>
 
-<ReceiptID> 1 </ReceiptID>
-<Date> 9/12/2022 </Date>
-<Kind> Basic </Kind>
-<Amount> 3234.0 </Amount>
-<Company> AS </Company>
-<Country> USA </Country>
-<City> AS </City>
-<Street> DSA </Street>
-<Number> 23 </Number>
-
 <ReceiptID> 2 </ReceiptID>
 <Date> 11/11/2111 </Date>
 <Kind> Other </Kind>
 <Amount> 1000.0 </Amount>
-<Company> ewr </Company>
+<Company> ewre </Company>
 <Country> werw </Country>
 <City> ewr </City>
 <Street> were </Street>
@@ -39,59 +29,29 @@
 <Date> 2/2/2019 </Date>
 <Kind> Travel </Kind>
 <Amount> 100.0 </Amount>
-<Company> sdfsd </Company>
+<Company> sfsdf </Company>
 <Country> sdfssdf </Country>
 <City> sdfsd </City>
 <Street> sdfs </Street>
 <Number> 1 </Number>
 
 <ReceiptID> 4 </ReceiptID>
-<Date> 22/12/2022 </Date>
-<Kind> Health </Kind>
-<Amount> 4567.0 </Amount>
-<Company> jgdbeafjhewdasxkj </Company>
-<Country> fgkiug </Country>
-<City> gkj </City>
-<Street> hhg </Street>
-<Number> 67 </Number>
-
-<ReceiptID> 5 </ReceiptID>
-<Date> 20/12/2022 </Date>
-<Kind> Travel </Kind>
-<Amount> 432.0 </Amount>
-<Company> ig </Company>
-<Country> uiyg </Country>
-<City> ythgf </City>
-<Street> uytf </Street>
-<Number> 89 </Number>
-
-<ReceiptID> 6 </ReceiptID>
-<Date> 2/11/2022 </Date>
+<Date> 11/12/2021 </Date>
 <Kind> Basic </Kind>
-<Amount> 34.0 </Amount>
-<Company> adsj </Company>
-<Country> IUHAS </Country>
-<City> adsj </City>
-<Street> iuh </Street>
-<Number> 43 </Number>
+<Amount> 4535.0 </Amount>
+<Company> wer </Company>
+<Country> wer </Country>
+<City> wer </City>
+<Street> wer </Street>
+<Number> 4 </Number>
 
-<ReceiptID> 7 </ReceiptID>
-<Date> 7/12/2022 </Date>
+<ReceiptID> 20 </ReceiptID>
+<Date> 8/11/2022 </Date>
 <Kind> Basic </Kind>
-<Amount> 567.0 </Amount>
-<Company> hjgfv </Company>
-<Country> ugavsd </Country>
-<City> hjgfv </City>
-<Street> uyjhfg </Street>
-<Number> 32 </Number>
-
-<ReceiptID> 8 </ReceiptID>
-<Date> 25/12/2022 </Date>
-<Kind> Entertainment </Kind>
-<Amount> 234.9 </Amount>
-<Company> Thessalonikh </Company>
+<Amount> 1999.0 </Amount>
+<Company> TEST </Company>
 <Country> Greece </Country>
-<City> Thessalonikh </City>
-<Street> Pliatsiko </Street>
-<Number> 23 </Number>
+<City> Ioannina </City>
+<Street> Smyrnhs </Street>
+<Number> 15 </Number>
 

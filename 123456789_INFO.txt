@@ -1,7 +1,7 @@
-Name: Mpampis Mpampouras
+Name: Apostolos Zarras
 AFM: 123456789
 Status: Married Filing Jointly
-Income: 254658.0
+Income: 260000.0
 
 Receipts:
 
@@ -9,27 +9,17 @@ Receipt ID: 0
 Date: 10/5/1996
 Kind: Basic
 Amount: 251.0
-Company: Drama
+Company: Parta
 Country: Jakusa
 City: Drama
 Street: Fukosima
 Number: 5
 
-Receipt ID: 1
-Date: 9/12/2022
-Kind: Basic
-Amount: 3234.0
-Company: AS
-Country: USA
-City: AS
-Street: DSA
-Number: 23
-
 Receipt ID: 2
 Date: 11/11/2111
 Kind: Other
 Amount: 1000.0
-Company: ewr
+Company: ewre
 Country: werw
 City: ewr
 Street: were
@@ -39,69 +29,39 @@ Receipt ID: 3
 Date: 2/2/2019
 Kind: Travel
 Amount: 100.0
-Company: sdfsd
+Company: sfsdf
 Country: sdfssdf
 City: sdfsd
 Street: sdfs
 Number: 1
 
 Receipt ID: 4
-Date: 22/12/2022
-Kind: Health
-Amount: 4567.0
-Company: jgdbeafjhewdasxkj
-Country: fgkiug
-City: gkj
-Street: hhg
-Number: 67
-
-Receipt ID: 5
-Date: 20/12/2022
-Kind: Travel
-Amount: 432.0
-Company: ig
-Country: uiyg
-City: ythgf
-Street: uytf
-Number: 89
-
-Receipt ID: 6
-Date: 2/11/2022
+Date: 11/12/2021
 Kind: Basic
-Amount: 34.0
-Company: adsj
-Country: IUHAS
-City: adsj
-Street: iuh
-Number: 43
+Amount: 4535.0
+Company: wer
+Country: wer
+City: wer
+Street: wer
+Number: 4
 
-Receipt ID: 7
-Date: 7/12/2022
+Receipt ID: 20
+Date: 8/11/2022
 Kind: Basic
-Amount: 567.0
-Company: hjgfv
-Country: ugavsd
-City: hjgfv
-Street: uyjhfg
-Number: 32
-
-Receipt ID: 8
-Date: 25/12/2022
-Kind: Entertainment
-Amount: 234.9
-Company: Thessalonikh
+Amount: 1999.0
+Company: TEST
 Country: Greece
-City: Thessalonikh
-Street: Pliatsiko
-Number: 23
+City: Ioannina
+Street: Smyrnhs
+Number: 15
 
-Receipt ID: 9
-Date: 22/12/2022
-Kind: Health
-Amount: 234.0
-Company: ATH
-Country: GR
-City: ATH
-Street: df
-Number: 59
+Receipt ID: 12
+Date: 8/11/2022
+Kind: Basic
+Amount: 1999.0
+Company: TEST
+Country: Greece
+City: Ioannina
+Street: Smyrnhs
+Number: 15
 
