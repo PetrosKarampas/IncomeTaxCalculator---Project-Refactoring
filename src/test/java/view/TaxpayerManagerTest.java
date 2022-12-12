@@ -1,3 +1,4 @@
+package view;
 import incometaxcalculator.data.management.TaxpayerManager;
 import incometaxcalculator.exceptions.*;
 import java.io.BufferedReader;
