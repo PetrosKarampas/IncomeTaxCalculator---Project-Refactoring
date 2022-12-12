@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,12 +16,7 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-            <Menu mnemonicParsing="false" text="Load file">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#loadTxtDocument" text="Load TXT file" />
-                  <MenuItem mnemonicParsing="false" onAction="#loadXMLDocument" text="Load XML file" />
-              </items>
-            </Menu>
+            <Menu mnemonicParsing="false" text="Load file" />
         </menus>
       </MenuBar>
    </top>
@@ -47,8 +43,14 @@
                         </AnchorPane>
                       <AnchorPane>
                            <children>
-                              <Button fx:id="selectBtn" layoutX="54.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#selectTaxpayer" text="Select" />
-                              <Button fx:id="deleteBtn" layoutX="54.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#deleteTaxpayer" text="Delete" />
+                              <Button fx:id="selectBtn" layoutX="46.0" layoutY="27.0" mnemonicParsing="false" onMouseClicked="#selectTaxpayer" prefWidth="70.0" text="View" />
+                              <Button fx:id="deleteBtn" layoutX="46.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#deleteTaxpayer" prefWidth="70.0" text="Delete" />
+                              <MenuButton layoutX="46.0" layoutY="96.0" mnemonicParsing="false" prefWidth="70.0" text="Load">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#loadTxtDocument" text="Load TXT file" />
+                                    <MenuItem mnemonicParsing="false" onAction="#loadXMLDocument" text="Load XML file" />
+                                </items>
+                              </MenuButton>
                            </children>
                         </AnchorPane>
                     </items>
