@@ -6,8 +6,7 @@ public class FileFactory {
 
     public FileFactory() {}
 
-    public File createInfoFile(String infoDotFormat, int taxRegistrationNumber)
-    {
+    public File createInfoFile(String infoDotFormat, int taxRegistrationNumber) {
         if(infoDotFormat.equals("_INFO.xml"))
             return new File(taxRegistrationNumber + "_INFO.xml");
         else

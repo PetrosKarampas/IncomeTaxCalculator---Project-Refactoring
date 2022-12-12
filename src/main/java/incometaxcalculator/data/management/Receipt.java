@@ -18,8 +18,7 @@ public class Receipt {
     this.company = company;
   }
 
-  private Date createDate(String issueDate) throws WrongReceiptDateException
-  {
+  private Date createDate(String issueDate) throws WrongReceiptDateException {
     String[] token = issueDate.split("/");
     if (token.length != 3)
       throw new WrongReceiptDateException();

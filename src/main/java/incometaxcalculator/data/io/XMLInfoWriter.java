@@ -7,11 +7,9 @@ import java.util.HashMap;
 import incometaxcalculator.data.management.Receipt;
 import incometaxcalculator.exceptions.WrongTaxpayerStatusException;
 
-public class XMLInfoWriter extends InfoWriter
-{
+public class XMLInfoWriter extends InfoWriter {
   @Override
-  public void generateTaxpayerInfo(int taxRegistrationNumber) throws WrongTaxpayerStatusException, IOException
-  {
+  public void generateTaxpayerInfo(int taxRegistrationNumber) throws WrongTaxpayerStatusException, IOException {
     PrintWriter outputStream = new PrintWriter(new java.io.FileWriter(taxRegistrationNumber + "_INFO.xml"));
     outputStream.println("<Name> "    + manager.getTaxpayerFullName(taxRegistrationNumber) + " </Name>");
     outputStream.println("<AFM> "     + taxRegistrationNumber + " </AFM>");
@@ -20,22 +18,21 @@ public class XMLInfoWriter extends InfoWriter
     outputStream.println();
     generateTaxpayerReceipts(taxRegistrationNumber, outputStream);
   }
+
   @Override
-  public void generateTaxpayerReceipts(int taxRegistrationNumber, PrintWriter outputStream)
-  {
+  public void generateTaxpayerReceipts(int taxRegistrationNumber, PrintWriter outputStream) {
     HashMap<Integer, Receipt> receiptsHashMap = manager.getReceiptHashMap(taxRegistrationNumber);
     outputStream.println("<Receipts>");
     outputStream.println();
-    for (HashMap.Entry<Integer, Receipt> entry : receiptsHashMap.entrySet())
-    {
+    for (HashMap.Entry<Integer, Receipt> entry : receiptsHashMap.entrySet()) {
       Receipt receipt = entry.getValue();
       generateReceiptID(receipt, outputStream);
     }
     outputStream.close();
   }
+
   @Override
-  public void generateReceiptID(Receipt receipt, PrintWriter outputStream)
-  {
+  public void generateReceiptID(Receipt receipt, PrintWriter outputStream) {
     outputStream.println("<ReceiptID> " + receipt.getReceiptId()            + " </ReceiptID>");
     outputStream.println("<Date> "      + receipt.getIssueDate()            + " </Date>");
     outputStream.println("<Kind> "      + receipt.getKind()                 + " </Kind>");

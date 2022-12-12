@@ -18,8 +18,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class ReceiptController implements Initializable
-{
+public class ReceiptController implements Initializable {
 
     @FXML private Button submitReceiptBtn;
     @FXML private TextField receiptId;
@@ -41,15 +40,13 @@ public class ReceiptController implements Initializable
         taxpayerDataController = controller;
     }
 
-    @FXML public void submitReceipt() throws WrongFileFormatException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongTaxpayerStatusException
-    {
+    @FXML public void submitReceipt() throws WrongFileFormatException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongTaxpayerStatusException {
         LocalDate localDate = date.getValue();
         String correctDate = localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
         int id = Integer.parseInt(receiptId.getText());
 
-        if (!taxpayerManager.containsReceipt(id))
-        {
+        if (!taxpayerManager.containsReceipt(id)) {
             taxpayerManager.addReceipt(Integer.parseInt(receiptId.getText()),
                     correctDate,
                     Float.parseFloat(amount.getText()),
@@ -63,8 +60,7 @@ public class ReceiptController implements Initializable
 
             taxpayerDataController.addReceiptIdToList(Integer.parseInt(receiptId.getText()));
         }
-        else
-        {
+        else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Receipt id error");
             alert.setHeaderText("Receipt id already exists!");
@@ -78,8 +74,7 @@ public class ReceiptController implements Initializable
         receiptKind = kind.getValue();
     }
 
-    public void setTaxRegistrationNumber(int taxRegistrationNumber)
-    {
+    public void setTaxRegistrationNumber(int taxRegistrationNumber) {
         this.taxRegistrationNumber = taxRegistrationNumber;
     }
 
@@ -88,8 +83,7 @@ public class ReceiptController implements Initializable
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)
-    {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         final String[] receiptKinds = {"Basic", "Entertainment", "Health", "Travel", "Other"};
         kind.getItems().addAll(receiptKinds);
         kind.setOnAction(this::getKind);

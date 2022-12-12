@@ -6,8 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 
-public abstract class LogWriter implements FileWriterInterface
-{
+public abstract class LogWriter implements FileWriterInterface {
     public abstract void generateTaxpayerLogFile(int taxRegistrationNumber) throws IOException;
     public abstract void writeTaxpayerVariationTaxOnReceipts(int taxRegistrationNumber, PrintWriter outputStream);
     public abstract void writeTaxpayerTotalTaxAndTotalReceipts(int taxRegistrationNumber, PrintWriter outputStream);
@@ -15,14 +14,14 @@ public abstract class LogWriter implements FileWriterInterface
     public abstract double calculateReceiptAmountForGivenKind(int taxRegistrationNumber, HashMap<String, Integer> kindHashMap, String kind);
     protected final HashMap<String, Integer> kindHashMap = new HashMap<>();
     protected TaxpayerManager manager = new TaxpayerManager();
+
     @Override
-    public void generateFile(int taxRegistrationNumber) throws IOException
-    {
+    public void generateFile(int taxRegistrationNumber) throws IOException {
         initializeKindHashMap();
         generateTaxpayerLogFile(taxRegistrationNumber);
     }
-    public void initializeKindHashMap()
-    {
+
+    public void initializeKindHashMap() {
         kindHashMap.put("ENTERTAINMENT",0);
         kindHashMap.put("BASIC",1);
         kindHashMap.put("TRAVEL",2);

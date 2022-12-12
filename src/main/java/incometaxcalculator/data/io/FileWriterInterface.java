@@ -4,7 +4,6 @@ import incometaxcalculator.exceptions.WrongTaxpayerStatusException;
 
 import java.io.IOException;
 
-public interface FileWriterInterface
-{
+public interface FileWriterInterface {
     void generateFile(int taxRegistrationNumber) throws IOException, WrongTaxpayerStatusException;
 }
