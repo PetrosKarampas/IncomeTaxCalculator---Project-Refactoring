@@ -1,12 +1,12 @@
-Name: Mpampis Mpampouras
+Name: Apostolos Zarras
 AFM: 123456789
-Income: 254658.0
-Basic Tax: 18238.862999999998
-Tax Increase: 1459.1090399999998
-Total Tax: 19697.972039999997
-TotalReceiptsGathered: 10
-Entertainment: 234.89999389648438
-Basic: 4086.0
-Travel: 532.0
-Health: 4801.0
+Income: 260000.0
+Basic Tax: 18765.05
+Tax Increase: 1501.204
+Total Tax: 20266.254
+TotalReceiptsGathered: 6
+Entertainment: 0.0
+Basic: 8784.0
+Travel: 100.0
+Health: 0.0
 Other: 1000.0

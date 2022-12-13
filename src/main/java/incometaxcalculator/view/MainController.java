@@ -87,7 +87,7 @@ public class MainController implements Initializable {
 
         TaxpayerDataController taxPayer = new TaxpayerDataController(fullName, income, status, trn);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/TaxpayerDataScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/incometaxcalculator/view/TaxpayerDataScene.fxml"));
         loader.setController(taxPayer);
         Parent root = loader.load();
         Scene scene = new Scene(root);

@@ -15,16 +15,6 @@
 <Street> Fukosima </Street>
 <Number> 5 </Number>
 
-<ReceiptID> 2 </ReceiptID>
-<Date> 11/11/2111 </Date>
-<Kind> Other </Kind>
-<Amount> 1000.0 </Amount>
-<Company> ewre </Company>
-<Country> werw </Country>
-<City> ewr </City>
-<Street> were </Street>
-<Number> 4 </Number>
-
 <ReceiptID> 3 </ReceiptID>
 <Date> 2/2/2019 </Date>
 <Kind> Travel </Kind>
@@ -46,6 +36,16 @@
 <Number> 4 </Number>
 
 <ReceiptID> 20 </ReceiptID>
+<Date> 8/11/2022 </Date>
+<Kind> Basic </Kind>
+<Amount> 1999.0 </Amount>
+<Company> TEST </Company>
+<Country> Greece </Country>
+<City> Ioannina </City>
+<Street> Smyrnhs </Street>
+<Number> 15 </Number>
+
+<ReceiptID> 12 </ReceiptID>
 <Date> 8/11/2022 </Date>
 <Kind> Basic </Kind>
 <Amount> 1999.0 </Amount>
