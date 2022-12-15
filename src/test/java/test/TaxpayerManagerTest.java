@@ -89,8 +89,8 @@ class TaxpayerManagerTest {
 	void removeReceiptTest1() throws WrongFileFormatException, IOException, WrongTaxpayerStatusException, WrongReceiptDateException
     {
        taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
-       taxpayerManager.removeReceipt(2);
-       assertFalse(taxpayerManager.containsReceipt(2));
+       taxpayerManager.removeReceipt(0);
+       assertFalse(taxpayerManager.containsReceipt(0));
    }
 	
 	@Test
@@ -98,7 +98,7 @@ class TaxpayerManagerTest {
 	{
 		taxpayerManager.loadTaxpayer(String.valueOf(txtFileName));
         taxpayerManager.saveLogFile(123456789, "_LOG.txt");
-        String expected = " Apostolos Zarras,  123456789,  260000.0,  18765.05,  1501.204,  20266.254,  6,  0.0,  8784.0,  100.0,  0.0,  1000.0";
+        String expected = " Apostolos Zarras,  123456789,  260000.0,  18765.05,  1501.204,  20266.254,  6,  251.0,  1999.0,  4098.0,  4535.0,  0.0";
         Path txtLogFilePath = Paths.get(System.getProperty("user.dir")+"/123456789_LOG.txt");
         BufferedReader br = new BufferedReader(new FileReader(txtLogFilePath.toFile()));
         String line;

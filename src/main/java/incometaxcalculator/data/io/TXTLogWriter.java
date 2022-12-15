@@ -19,10 +19,10 @@ public class TXTLogWriter extends LogWriter
 
   @Override
   public void writeTaxpayerVariationTaxOnReceipts(int taxRegistrationNumber, PrintWriter outputStream) {
-    if (manager.getTaxpayerVariationTaxOnReceipts(taxRegistrationNumber) > 0)
-      outputStream.println("Tax Increase: " + manager.getTaxpayerVariationTaxOnReceipts(taxRegistrationNumber));
-    else
-      outputStream.println("Tax Decrease: " + manager.getTaxpayerVariationTaxOnReceipts(taxRegistrationNumber));
+    if (manager.getTaxpayerVariationTaxOnReceipts(taxRegistrationNumber) > 0) 
+        outputStream.println("Tax Increase: " + manager.getTaxpayerVariationTaxOnReceipts(taxRegistrationNumber));
+    else 
+        outputStream.println("Tax Decrease: " + manager.getTaxpayerVariationTaxOnReceipts(taxRegistrationNumber));
   }
 
   @Override
