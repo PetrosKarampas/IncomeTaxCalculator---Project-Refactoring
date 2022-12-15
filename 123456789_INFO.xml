@@ -5,15 +5,15 @@
 
 <Receipts>
 
-<ReceiptID> 50 </ReceiptID>
-<Date> 8/11/2022 </Date>
-<Kind> Travel </Kind>
-<Amount> 1999.0 </Amount>
-<Company> TEST </Company>
-<Country> Greece </Country>
-<City> Ioannina </City>
-<Street> Smyrnhs </Street>
-<Number> 15 </Number>
+<ReceiptID> 0 </ReceiptID>
+<Date> 10/5/1996 </Date>
+<Kind> Entertainment </Kind>
+<Amount> 251.0 </Amount>
+<Company> Parta </Company>
+<Country> Jakusa </Country>
+<City> Drama </City>
+<Street> Fukosima </Street>
+<Number> 5 </Number>
 
 <ReceiptID> 3 </ReceiptID>
 <Date> 2/2/2019 </Date>
@@ -54,4 +54,3 @@
 <City> Ioannina </City>
 <Street> Smyrnhs </Street>
 <Number> 15 </Number>
-

@@ -54,15 +54,3 @@ Country: Greece
 City: Ioannina
 Street: Smyrnhs
 Number: 15
-
-
-Receipt ID: 50
-Date: 8/11/2022
-Kind: Travel
-Amount: 1999.0
-Company: TEST
-Country: Greece
-City: Ioannina
-Street: Smyrnhs
-Number: 15
-
