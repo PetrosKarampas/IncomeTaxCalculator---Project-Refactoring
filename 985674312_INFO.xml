@@ -86,12 +86,12 @@
 <Number> 2 </Number>
 
 <ReceiptID> 8 </ReceiptID>
-<Date> 30/11/2022 </Date>
-<Kind> Travel </Kind>
-<Amount> 20000.0 </Amount>
-<Company> Adidas </Company>
-<Country> Russia </Country>
-<City> Some Russian City </City>
-<Street> SOme Russian Street </Street>
-<Number> 7 </Number>
+<Date> 14/12/2022 </Date>
+<Kind> Basic </Kind>
+<Amount> 2345.0 </Amount>
+<Company> Apple </Company>
+<Country> US </Country>
+<City> Detroit </City>
+<Street> Str three </Street>
+<Number> 3 </Number>
 

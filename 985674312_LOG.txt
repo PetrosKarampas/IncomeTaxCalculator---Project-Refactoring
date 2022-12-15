@@ -1,0 +1,12 @@
+Name: Monkey D. Luffy
+AFM: 985674312
+Income: 556776.0
+Basic Tax: 49281.131
+Tax Increase: 3942.4904800000004
+Total Tax: 53223.62148
+TotalReceiptsGathered: 9
+Entertainment: 2589.0
+Basic: 6912.0
+Travel: 567.0
+Health: 48144.0
+Other: 24324.0
