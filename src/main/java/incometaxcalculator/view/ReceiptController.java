@@ -40,7 +40,7 @@ public class ReceiptController implements Initializable {
         taxpayerDataController = controller;
     }
 
-    @FXML public void submitReceipt() throws WrongFileFormatException, IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongTaxpayerStatusException {
+    @FXML public void submitReceipt() throws IOException, WrongReceiptDateException, ReceiptAlreadyExistsException, WrongTaxpayerStatusException {
         LocalDate localDate = date.getValue();
         String correctDate = localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 

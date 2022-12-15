@@ -7,7 +7,7 @@
 
 <ReceiptID> 0 </ReceiptID>
 <Date> 10/5/1996 </Date>
-<Kind> Basic </Kind>
+<Kind> Entertainment </Kind>
 <Amount> 251.0 </Amount>
 <Company> Parta </Company>
 <Country> Jakusa </Country>
@@ -27,7 +27,7 @@
 
 <ReceiptID> 4 </ReceiptID>
 <Date> 11/12/2021 </Date>
-<Kind> Basic </Kind>
+<Kind> Health </Kind>
 <Amount> 4535.0 </Amount>
 <Company> wer </Company>
 <Country> wer </Country>
@@ -47,7 +47,7 @@
 
 <ReceiptID> 12 </ReceiptID>
 <Date> 8/11/2022 </Date>
-<Kind> Basic </Kind>
+<Kind> Travel </Kind>
 <Amount> 1999.0 </Amount>
 <Company> TEST </Company>
 <Country> Greece </Country>

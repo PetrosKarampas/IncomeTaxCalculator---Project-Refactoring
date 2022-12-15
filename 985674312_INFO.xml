@@ -1,7 +1,7 @@
 <Name> Monkey D. Luffy </Name>
 <AFM> 985674312 </AFM>
 <Status> Head of Household </Status>
-<Income> 556700.0 </Income>
+<Income> 556776.0 </Income>
 
 <Receipts>
 
@@ -9,30 +9,30 @@
 <Date> 16/12/2022 </Date>
 <Kind> Health </Kind>
 <Amount> 2343.0 </Amount>
-<Company> iuyg </Company>
-<Country> jhg </Country>
-<City> iuyg </City>
-<Street> iuyg </Street>
+<Company> Apple </Company>
+<Country> Greece </Country>
+<City> Ioannina </City>
+<Street> Dat Street </Street>
 <Number> 32 </Number>
 
 <ReceiptID> 1 </ReceiptID>
 <Date> 1/12/2022 </Date>
 <Kind> Health </Kind>
 <Amount> 123.0 </Amount>
-<Company> iuytgf </Company>
-<Country> iugv </Country>
-<City> iuytgf </City>
-<Street> oiuyg </Street>
+<Company> Youtube </Company>
+<Country> US </Country>
+<City> NY </City>
+<Street> Blvd </Street>
 <Number> 21 </Number>
 
 <ReceiptID> 2 </ReceiptID>
 <Date> 14/12/2022 </Date>
 <Kind> Other </Kind>
 <Amount> 24324.0 </Amount>
-<Company> vsad </Company>
-<Country> erg </Country>
-<City> vsad </City>
-<Street> awe </Street>
+<Company> Puma </Company>
+<Country> Sweden </Country>
+<City> Some City </City>
+<Street> datStreet </Street>
 <Number> 32 </Number>
 
 <ReceiptID> 3 </ReceiptID>
@@ -49,10 +49,10 @@
 <Date> 22/12/2022 </Date>
 <Kind> Travel </Kind>
 <Amount> 567.0 </Amount>
-<Company> HGH </Company>
-<Country> YHGVHB </Country>
-<City> HGH </City>
-<Street> JHJ </Street>
+<Company> Microsoft </Company>
+<Country> US </Country>
+<City> LA </City>
+<Street> Hollywood </Street>
 <Number> 43 </Number>
 
 <ReceiptID> 5 </ReceiptID>
@@ -64,4 +64,34 @@
 <City> NY </City>
 <Street> blvd </Street>
 <Number> 78 </Number>
+
+<ReceiptID> 6 </ReceiptID>
+<Date> 15/12/2022 </Date>
+<Kind> Entertainment </Kind>
+<Amount> 456.0 </Amount>
+<Company> Nike </Company>
+<Country> Greece </Country>
+<City> Athens </City>
+<Street> Ampelokipoi </Street>
+<Number> 42 </Number>
+
+<ReceiptID> 7 </ReceiptID>
+<Date> 5/12/2022 </Date>
+<Kind> Basic </Kind>
+<Amount> 4567.0 </Amount>
+<Company> Discord </Company>
+<Country> China </Country>
+<City> Some City </City>
+<Street> Some Street </Street>
+<Number> 2 </Number>
+
+<ReceiptID> 8 </ReceiptID>
+<Date> 30/11/2022 </Date>
+<Kind> Travel </Kind>
+<Amount> 20000.0 </Amount>
+<Company> Adidas </Company>
+<Country> Russia </Country>
+<City> Some Russian City </City>
+<Street> SOme Russian Street </Street>
+<Number> 7 </Number>
 
