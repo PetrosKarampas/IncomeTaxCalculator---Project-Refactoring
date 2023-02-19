@@ -17,8 +17,16 @@ public class MainGui extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/incometaxcalculator/view/Main.fxml")));
-        Image logo = new Image("/incometaxcalculator/view/Logo.png");
+        Parent root = null;
+
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Main.fxml")));
+        }
+        catch( NullPointerException e) {
+            System.out.println("Main window fxml is null!" + e.getMessage());
+        }
+
+        Image logo = new Image("/Logo.png");
 
         stage.setTitle("Income Tax Calculator");
         stage.getIcons().add(logo);

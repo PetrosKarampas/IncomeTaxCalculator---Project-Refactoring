@@ -53,7 +53,7 @@ public class TaxpayerDataController implements Initializable {
         ReceiptController newReceipt = new ReceiptController(this);
         newReceipt.setTaxRegistrationNumber(this.trnText);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/incometaxcalculator/view/ReceiptWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ReceiptWindow.fxml"));
         loader.setController(newReceipt);
 
         Parent root = loader.load();
